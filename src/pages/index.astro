@@ -1,9 +1,19 @@
 ---
+import Form from "../components/Form.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <main class="w-full flex flex-col">
+    <div class="fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] bg-secondary w-[40%] h-[30%] p-2 hidden" 
+    id="form" 
+    style="background-color: rgb(240, 231, 190);">
+        <button class="justify-end flex w-full text-lg" id="close">
+            close
+        </button>
+        <Form />
+    </div>
+
     <!-- splash page -->
     <div class="flex flex-col lg:items-end items-center justify-center xl:gap-24 lg:gap-12 gap-8 min-h-screen my-8 rounded-[4rem] mx-12 lg:p-12 p-4" id="background">
         <span
@@ -26,6 +36,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="flex flex-col gap-4 lg:items-end w-full">
           <button
             class="bg-secondary text-primary py-2 xl:px-12 xl:text-2xl lg:px-8 lg:text-xl lg:font-medium lg:w-fit w-full font-black uppercase rounded-3xl flex items-center justify-center"
+            id="alpha"
           >
             join alpha program
           </button>
@@ -116,3 +127,19 @@ import Layout from "../layouts/Layout.astro";
         background-size: cover;
     }
 </style>
+
+<script>
+    const open = document.getElementById("alpha") as HTMLButtonElement
+    const close = document.getElementById("close") as HTMLButtonElement
+    const form = document.getElementById("form") as HTMLButtonElement
+
+    close.addEventListener("click", () => {
+        form.classList.toggle("hidden")
+    })
+    open.addEventListener("click", () => {
+        form.classList.toggle("hidden")
+    })
+    
+
+</script>
+
