@@ -5,27 +5,27 @@ import Layout from "../layouts/Layout.astro";
 <Layout>
   <main class="w-full flex flex-col">
     <!-- splash page -->
-    <div class="flex flex-col items-end justify-center xl:gap-24 lg:gap-12 min-h-screen my-8 rounded-[4rem] mx-12 p-12" id="background">
+    <div class="flex flex-col lg:items-end items-center justify-center xl:gap-24 lg:gap-12 gap-8 min-h-screen my-8 rounded-[4rem] mx-12 lg:p-12 p-4" id="background">
         <span
-          class="xl:text-[4rem] lg:text-[2.7rem] text-2xl font-ladyrose lg:text-white text-black tracking-wider leading-[3rem]"
+          class="xl:text-[4rem] lg:text-[2.7rem] text-2xl font-ladyrose text-white tracking-wider lg:leading-[3rem]"
         >
           Sprout <span class="text-cyan-300">Smarter</span>: Learn, <br />
           Play, and Grow with <span class="text-cyan-300">AI</span>
         </span>
 
         <span
-          class="flex flex-col lg:w-[40%] lg:text-white text-black xl:text-2xl lg:text-lg font-light"
+          class="flex flex-col lg:w-[40%] text-white xl:text-2xl lg:text-lg lg:font-light"
         >
-          <span class="lg:text-white text-black font-ladyrose xl:text-2xl">
+          <span class="text-white font-ladyrose xl:text-2xl">
             Create and deliver immersive learning experiences
           </span>
           that engage students through AI-powered games, Multilingual, Adaptive,
           Fun, and Tailored for every learner.
         </span>
 
-        <div class="flex flex-col gap-4 lg:items-end">
+        <div class="flex flex-col gap-4 lg:items-end w-full">
           <button
-            class="bg-secondary text-primary py-2 xl:px-12 xl:text-2xl lg:px-8 lg:text-xl lg:font-medium font-black uppercase rounded-3xl flex items-center justify-center"
+            class="bg-secondary text-primary py-2 xl:px-12 xl:text-2xl lg:px-8 lg:text-xl lg:font-medium w-full font-black uppercase rounded-3xl flex items-center justify-center"
           >
             join alpha program
           </button>
@@ -40,21 +40,20 @@ import Layout from "../layouts/Layout.astro";
 
     <!-- about page -->
 
-    <div class="flex tracking-widest p-4 w-[90%] mx-auto">
+    <div class="flex flex-col lg:flex-row gap-6 lg:gap-0 tracking-widest p-4 lg:w-[90%] mx-auto">
 
       <div class="flex flex-col gap-4">
-        <span class="text-5xl font-ladyrose" >
+        <span class="lg:text-5xl text-3xl font-ladyrose" >
             <span class="text-extra_text2">Children Learn</span> Faster 
             <span class="text-extra_text2">with</span> Artificial Intelligence
         </span>
 
         <span class="text-2xl font-normal w-[80%]" >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet rem numquam at nostrum laudantium ad! Quia voluptatem tempora labore mollitia fugit aperiam, nulla error, sapiente eum optio odit quam est?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet rem numquam at nostrum laudantium ad! Quia voluptatem tempora labore mollitia fugit aperiam, nulla error, sapiente eum optio odit quam est?
         </span>
       </div>
 
-      <div class="flex items-end w-[100rem] justify-end mr-6" >
+      <div class="flex lg:items-end lg:w-[100rem] lg:justify-end lg:mr-6" >
         <img
             src="/bear.png"
             alt="Bear illustration"
@@ -67,11 +66,11 @@ import Layout from "../layouts/Layout.astro";
     <!-- memorial -->
 
     <div class="bg-secondary text-primary m-8 p-8 rounded-[3rem] flex flex-col gap-8">
-        <span class="text-5xl font-ladyrose" >
+        <span class="xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-ladyrose" >
             Discover What our Parents and Educational Institutions Say about Us
         </span>
 
-        <div class="flex lg:flex-row flex-col justify-between gap-12" >
+        <div class="flex md:flex-row flex-col justify-between lg:gap-12 gap-8" >
 
             <div class="bg-primary text-white rounded-xl p-4 flex flex-col gap-2">
                 <span class="font-ladyrose" >Manav Agarwal</span>
@@ -102,12 +101,9 @@ import Layout from "../layouts/Layout.astro";
                     quasi voluptatum rem.
                 </span>
             </div>
-
 
         </div>
-
     </div>
-
 
   </main>
 </Layout>
