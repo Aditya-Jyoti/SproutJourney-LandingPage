@@ -14,6 +14,8 @@ export default {
       fontFamily: {
         heroeau: ["HeroeauElegantDemo", "sans-serif"],
         ladyrose: ["ladyrose", "sans-serif"],
+        header: ["Helvetica", "sans-serif"],
+        body: ["Helvetica", "sans-serif"],
       },
     },
   },

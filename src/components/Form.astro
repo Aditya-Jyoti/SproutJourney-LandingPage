@@ -1,50 +1,74 @@
 ---
 
 ---
-<div class="" style="background-color: rgb(240, 231, 190);" >
-    <span class="xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-ladyrose">
-        Join Us
-    </span>
-    <form id="joinForm" class="flex flex-col gap-4">
-        <input type="text" name="name" placeholder="Name" class="p-2 rounded-xl" required />
-        <input type="email" name="email" placeholder="Email" class="p-2 rounded-xl" required />
-        <input type="text" name="institute" placeholder="Institute" class="p-2 rounded-xl" required />
-        <button type="submit" class="p-2 bg-primary text-white font-bold rounded-xl">Submit</button>
-    </form>
+
+<div class="" style="background-color: rgb(240, 231, 190);">
+  <span class="xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-body">
+    Join Us
+  </span>
+  <form id="joinForm" class="flex flex-col gap-4">
+    <input
+      type="text"
+      name="name"
+      placeholder="Name"
+      class="p-2 rounded-xl"
+      required
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Email"
+      class="p-2 rounded-xl"
+      required
+    />
+    <input
+      type="text"
+      name="institute"
+      placeholder="Institute"
+      class="p-2 rounded-xl"
+      required
+    />
+    <button type="submit" class="p-2 bg-primary text-white font-bold rounded-xl"
+      >Submit</button
+    >
+  </form>
 </div>
 
 <script>
-    import { createClient } from '@supabase/supabase-js'
+  import { createClient } from "@supabase/supabase-js";
 
-    const supabase = createClient('https://emxucasksvrjbgzplfwp.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVteHVjYXNrc3ZyamJnenBsZndwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU5OTM3NzMsImV4cCI6MjA0MTU2OTc3M30.TP1dtBRVAHS4WN2hHFOrSVJS6oTNhkTxdcVampqTOyk')
+  const supabase = createClient(
+    "https://emxucasksvrjbgzplfwp.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVteHVjYXNrc3ZyamJnenBsZndwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU5OTM3NzMsImV4cCI6MjA0MTU2OTc3M30.TP1dtBRVAHS4WN2hHFOrSVJS6oTNhkTxdcVampqTOyk"
+  );
 
-    const form = document.getElementById('joinForm') as HTMLFormElement;
-   
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(form);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const institute = formData.get('institute');
+  const form = document.getElementById("joinForm") as HTMLFormElement;
 
-        if (!name || !email || !institute) {
-            alert("Please fill all fields");
-            return;
-        }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-        try {
-            const { data, error } = await supabase
-                .from("Users")
-                .insert({ name, email, institute });
+    const formData = new FormData(form);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const institute = formData.get("institute");
 
-            if (error) throw error;
-            
-            console.log(data);
-            alert("User created successfully!");
-            form.reset();
-        } catch (error) {
-            alert("An error occurred while creating the user.");
-        }
-    });
+    if (!name || !email || !institute) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    try {
+      const { data, error } = await supabase
+        .from("Users")
+        .insert({ name, email, institute });
+
+      if (error) throw error;
+
+      console.log(data);
+      alert("User created successfully!");
+      form.reset();
+    } catch (error) {
+      alert("An error occurred while creating the user.");
+    }
+  });
 </script>
