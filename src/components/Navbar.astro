@@ -1,29 +1,90 @@
-<nav class="flex w-full lg:justify-between justify-center items-center">
+<nav class="flex w-full justify-between items-center">
   <span
-    class="font-heroeau font-medium xl:text-5xl text-3xl text-primary uppercase flex"
+    class="font-heroeau font-medium xl:text-3xl text-3xl text-primary uppercase flex"
     >sprout journey</span
   >
 
   <div class="flex xl:gap-12 lg:gap-10 items-center">
     <a
       href="/"
-      class="xl:text-2xl lg:text-xl lg:flex hidden text-extra_text1 uppercase"
+      class="lg:text-xl lg:flex hidden hover:underline underline-offset-4 duration-300 text-extra_text1 uppercase"
       >about us</a
     >
     <a
       href="#contact"
-      class="xl:text-2xl lg:text-xl lg:flex hidden text-extra_text1 uppercase"
+      class="lg:text-xl lg:flex hidden hover:underline underline-offset-4 duration-300 text-extra_text1 uppercase"
       >contact us</a
     >
     <a
       href="#careers"
-      class="xl:text-2xl lg:text-xl lg:flex hidden text-extra_text1 uppercase"
+      class="lg:text-xl lg:flex hidden hover:underline underline-offset-4 duration-300 text-extra_text1 uppercase"
       >careers</a
     >
 
     <button
-      class="uppercase font-bold text-secondary bg-primary xl:px-8 px-6 xl:py-3 lg:py-2 xl:text-xl lg:text-lg lg:flex hidden rounded-3xl"
-      >sign up</button
+      class="uppercase font-bold text-secondary bg-primary xl:px-8 px-6 xl:py-3 lg:py-2 lg:text-lg lg:flex hidden rounded-3xl"
+      >Join Us</button
     >
   </div>
+
+  <div class="lg:hidden flex">
+    <button
+      class="lg:hidden flex items-center absolute z-20 right-8 top-5 justify-center text-primary text-3xl"
+      id="navbutton"
+    >
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div
+      class="h-0 w-0 transition-all rounded-xl duration-300 z-10 bg-white fixed top-0 left-0 flex flex-col text-4xl justify-around items-center"
+      id="nav"
+    >
+      <a
+        href="/about"
+        class="hover:underline underline-offset-4 duration-300 text-extra_text1 text-opacity-0 transition-all uppercase"
+        id="about"
+        >about us</a
+      >
+      <a
+        href="/contact"
+        class="hover:underline underline-offset-4 duration-300 text-extra_text1 text-opacity-0 transition-all uppercase"
+        id="contact"
+        >contact us</a
+      >
+      <a
+        href="/careers"
+        class="hover:underline underline-offset-4 duration-300 text-extra_text1 text-opacity-0 transition-all uppercase"
+        id="careers"
+        >careers</a
+      >
+
+      <button
+        class="hover:underline underline-offset-4 duration-300 text-extra_text1 text-opacity-0 transition-all uppercase"
+        id="join"
+        >Join Us</button
+      >
+    </div>
+  </div>
 </nav>
+
+<script>
+  const navbutton = document.getElementById("navbutton") as HTMLButtonElement;
+  const nav = document.getElementById("nav") as HTMLDivElement;
+
+  const about = document.getElementById("about") as HTMLAnchorElement;
+  const contact = document.getElementById("contact") as HTMLAnchorElement;
+  const careers = document.getElementById("careers") as HTMLAnchorElement;
+  const join = document.getElementById("join") as HTMLAnchorElement;
+
+  navbutton.addEventListener("click", () => {
+    nav.classList.toggle("h-0");
+    nav.classList.toggle("w-0");
+    nav.classList.toggle("h-full");
+    nav.classList.toggle("w-full");
+
+    about.classList.toggle("text-opacity-0");
+    contact.classList.toggle("text-opacity-0");
+    careers.classList.toggle("text-opacity-0");
+    join.classList.toggle("text-opacity-0");
+  });
+</script>

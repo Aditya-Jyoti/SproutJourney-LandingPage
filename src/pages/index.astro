@@ -5,141 +5,140 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <main class="w-full flex flex-col">
-    <div class="fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] bg-secondary w-[40%] h-[30%] p-2 hidden" 
-    id="form" 
-    style="background-color: rgb(240, 231, 190);">
-        <button class="justify-end flex w-full text-lg" id="close">
-            close
-        </button>
-        <Form />
+    <div
+      class="fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] bg-secondary w-[40%] h-[30%] p-2 hidden"
+      id="form"
+      style="background-color: rgb(240, 231, 190);"
+    >
+      <button class="justify-end flex w-full text-lg" id="close">
+        close
+      </button>
+      <Form />
     </div>
 
     <!-- splash page -->
-    <div class="flex flex-col lg:items-end items-center justify-center xl:gap-24 lg:gap-12 gap-8 min-h-screen my-8 rounded-[4rem] mx-12 lg:p-12 p-4" id="background">
-        <span
-          class="xl:text-[4rem] lg:text-[2.7rem] text-2xl font-ladyrose text-white tracking-wider lg:leading-[3rem]"
-        >
-          Sprout <span class="text-cyan-300">Smarter</span>: Learn, <br />
-          Play, and Grow with <span class="text-cyan-300">AI</span>
+    <div
+      class="flex flex-col lg:items-end lg:justify-start items-center justify-center xl:gap-12 lg:gap-12 gap-8 h-[55rem] my-8 rounded-[4rem] mx-12 lg:p-12 p-4"
+      id="background"
+    >
+      <span
+        class="lg:text-[4rem] text-xl lg:mt-24 lg:mr-12 font-ladyrose text-white tracking-wider lg:leading-[4rem]"
+      >
+        Sprout <span class="text-cyan-300">Smarter</span>: Learn, <br />
+        Play, and Grow with <span class="text-cyan-300">AI</span>
+      </span>
+
+      <span
+        class="flex flex-col lg:w-[40%] lg:mr-12 text-white xl:text-2xl lg:text-lg lg:font-light"
+      >
+        <span class="text-white font-ladyrose xl:text-2xl">
+          Create and deliver immersive learning experiences
         </span>
+        that engage students through AI-powered games, Multilingual, Adaptive, Fun,
+        and Tailored for every learner.
+      </span>
 
-        <span
-          class="flex flex-col lg:w-[40%] text-white xl:text-2xl lg:text-lg lg:font-light"
+      <div class="flex flex-col gap-4 lg:items-end w-full lg:mr-12">
+        <button
+          class="bg-secondary text-primary py-2 xl:px-12 xl:text-2xl lg:px-8 lg:text-xl lg:font-medium lg:w-fit w-full font-black uppercase rounded-3xl flex items-center justify-center"
+          id="alpha"
         >
-          <span class="text-white font-ladyrose xl:text-2xl">
-            Create and deliver immersive learning experiences
-          </span>
-          that engage students through AI-powered games, Multilingual, Adaptive,
-          Fun, and Tailored for every learner.
-        </span>
+          join alpha program
+        </button>
 
-        <div class="flex flex-col gap-4 lg:items-end w-full">
-          <button
-            class="bg-secondary text-primary py-2 xl:px-12 xl:text-2xl lg:px-8 lg:text-xl lg:font-medium lg:w-fit w-full font-black uppercase rounded-3xl flex items-center justify-center"
-            id="alpha"
-          >
-            join alpha program
-          </button>
-
-          <button
-            class="lg:border-[1px] border-0 border-secondary uppercase xl:text-2xl lg:text-xl text-secondary lg:font-semibold font-black lg:bg-transparent bg-primary lg:w-fit py-2 px-8 rounded-3xl"
-          >
-            learn more
-          </button>
-        </div>
+        <button
+          class="lg:border-[1px] border-0 border-secondary uppercase xl:text-2xl lg:text-xl text-secondary lg:font-semibold font-black lg:bg-transparent bg-primary lg:w-fit py-2 px-8 rounded-3xl"
+        >
+          learn more
+        </button>
+      </div>
     </div>
 
     <!-- about page -->
 
-    <div class="flex flex-col lg:flex-row gap-6 lg:gap-12 tracking-widest p-4 lg:w-[90%] mx-auto">
-
-      <div class="flex flex-col gap-4">
-        <span class="lg:text-5xl text-3xl font-ladyrose" >
-            <span class="text-extra_text2">Children Learn</span> Faster 
-            <span class="text-extra_text2">with</span> Artificial Intelligence
+    <div
+      class="flex flex-col lg:flex-row gap-6 lg:gap-12 tracking-widest p-4 lg:w-[90%] mx-auto"
+    >
+      <div class="flex flex-col gap-4 lg:items-start lg:text-left items-center text-center">
+        <span class="lg:text-5xl text-3xl font-ladyrose">
+          <span class="text-extra_text2">Children Learn</span> Faster
+          <span class="text-extra_text2">with</span> Artificial Intelligence
         </span>
 
-        <span class="text-2xl font-normal w-[80%]" >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet rem numquam at nostrum laudantium ad! Quia voluptatem tempora labore mollitia fugit aperiam, nulla error, sapiente eum optio odit quam est?
+        <span class="text-2xl font-normal w-[80%]">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet rem
+          numquam at nostrum laudantium ad! Quia voluptatem tempora labore
+          mollitia fugit aperiam, nulla error, sapiente eum optio odit quam est?
         </span>
       </div>
 
-      <div class="flex lg:items-end lg:w-[40rem] lg:justify-end lg:mr-6" >
-        <img
-            src="/bear.png"
-            alt="Bear illustration"
-            class="w-full"
-        />
+      <div class="flex lg:items-end lg:w-[40rem] lg:justify-end lg:mr-6">
+        <img src="/bear.png" alt="Bear illustration" class="w-full" />
       </div>
-
     </div>
 
     <!-- memorial -->
 
-    <div class="bg-secondary text-primary m-8 p-8 rounded-[3rem] flex flex-col gap-8">
-        <span class="xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-ladyrose" >
-            Discover What our Parents and Educational Institutions Say about Us
-        </span>
+    <div
+      class="bg-secondary text-primary m-8 p-8 rounded-[3rem] flex flex-col gap-8"
+    >
+      <span class="xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-ladyrose">
+        Discover What our Parents and Educational Institutions Say about Us
+      </span>
 
-        <div class="flex md:flex-row flex-col justify-between lg:gap-12 gap-8" >
-
-            <div class="bg-primary text-white rounded-xl p-4 flex flex-col gap-2">
-                <span class="font-ladyrose" >Manav Agarwal</span>
-                <span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Ipsum error enim distinctio earum obcaecati optio quis, quibusdam porro
-                    maiores cum dolorum alias, consequuntur libero. Odio ratione vel 
-                    quasi voluptatum rem.
-                </span>
-            </div>
-
-            <div class="bg-primary text-white rounded-xl p-4 flex flex-col gap-2">
-                <span class="font-ladyrose" >Manav Agarwal</span>
-                <span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Ipsum error enim distinctio earum obcaecati optio quis, quibusdam porro
-                    maiores cum dolorum alias, consequuntur libero. Odio ratione vel 
-                    quasi voluptatum rem.
-                </span>
-            </div>
-
-            <div class="bg-primary text-white rounded-xl p-4 flex flex-col gap-2">
-                <span class="font-ladyrose" >Manav Agarwal</span>
-                <span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Ipsum error enim distinctio earum obcaecati optio quis, quibusdam porro
-                    maiores cum dolorum alias, consequuntur libero. Odio ratione vel 
-                    quasi voluptatum rem.
-                </span>
-            </div>
-
+      <div class="flex md:flex-row flex-col justify-between lg:gap-12 gap-8">
+        <div class="bg-primary text-white rounded-xl p-4 flex flex-col gap-2">
+          <span class="font-ladyrose">Manav Agarwal</span>
+          <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum error
+            enim distinctio earum obcaecati optio quis, quibusdam porro maiores
+            cum dolorum alias, consequuntur libero. Odio ratione vel quasi
+            voluptatum rem.
+          </span>
         </div>
-    </div>
 
+        <div class="bg-primary text-white rounded-xl p-4 flex flex-col gap-2">
+          <span class="font-ladyrose">Manav Agarwal</span>
+          <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum error
+            enim distinctio earum obcaecati optio quis, quibusdam porro maiores
+            cum dolorum alias, consequuntur libero. Odio ratione vel quasi
+            voluptatum rem.
+          </span>
+        </div>
+
+        <div class="bg-primary text-white rounded-xl p-4 flex flex-col gap-2">
+          <span class="font-ladyrose">Manav Agarwal</span>
+          <span>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum error
+            enim distinctio earum obcaecati optio quis, quibusdam porro maiores
+            cum dolorum alias, consequuntur libero. Odio ratione vel quasi
+            voluptatum rem.
+          </span>
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
 
 <style>
-    #background {
-        background-image: url('/background.png');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
+  #background {
+    background-image: url("/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
 </style>
 
 <script>
-    const open = document.getElementById("alpha") as HTMLButtonElement
-    const close = document.getElementById("close") as HTMLButtonElement
-    const form = document.getElementById("form") as HTMLButtonElement
+  const open = document.getElementById("alpha") as HTMLButtonElement;
+  const close = document.getElementById("close") as HTMLButtonElement;
+  const form = document.getElementById("form") as HTMLButtonElement;
 
-    close.addEventListener("click", () => {
-        form.classList.toggle("hidden")
-    })
-    open.addEventListener("click", () => {
-        form.classList.toggle("hidden")
-    })
-    
-
+  close.addEventListener("click", () => {
+    form.classList.toggle("hidden");
+  });
+  open.addEventListener("click", () => {
+    form.classList.toggle("hidden");
+  });
 </script>
-
