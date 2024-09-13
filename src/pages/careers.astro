@@ -42,7 +42,11 @@ import Marquee from "../components/Marquee.astro";
           >
         </div>
         <div class="flex flex-col items-center justify-center gap-2">
-          <img src="/inspiration.svg" alt="" class="lg:w-36 lg:h-36 w-24 h-24" />
+          <img
+            src="/inspiration.svg"
+            alt=""
+            class="lg:w-36 lg:h-36 w-24 h-24"
+          />
           <span class="text-xl font-bold font-body">Inspiring People</span>
           <span class="text-lg font-body w-[50%] text-center"
             >Work alongside a team that challenges and motivates you every day.</span
@@ -56,5 +60,11 @@ import Marquee from "../components/Marquee.astro";
       >Meet The Team</span
     >
     <Marquee />
+
+    <div class="flex items-center justify-center w-full" >
+      <a href="/contact" class="border-2 border-primary py-2 px-12 w-fit text-2xl"
+        >Join Us</a
+      >
+    </div>
   </main>
 </Layout>
