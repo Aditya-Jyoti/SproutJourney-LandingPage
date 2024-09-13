@@ -1,0 +1,113 @@
+---
+// PeopleMarquee.astro
+const people = [
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+  { name: "Alice Johnson", image: "/about/img1.png" },
+  { name: "Bob Smith", image: "/about/img2.png" },
+  { name: "Charlie Brown", image: "/about/img3.png" },
+
+];
+---
+
+<div class="marquee-container pb-10 lg:-mt-10 lg:pb-0">
+  <div class="marquee">
+    {
+      people.map((person) => (
+        <div class="marquee-item">
+          <img
+            src={person.image}
+            alt={person.name}
+            class="w-40 h-40 rounded-full"
+          />
+          <p class="mt-2 text-center text-2xl">{person.name}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .marquee {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+  }
+
+  .marquee-item {
+    flex: 0 0 auto;
+    padding: 0 1rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .marquee-container:hover .marquee {
+    animation-play-state: paused;
+  }
+</style>
+
+<script>
+  function setupMarquee() {
+    const container = document.querySelector(".marquee-container");
+    const marquee = document.querySelector(".marquee");
+
+    // Clone the marquee content to ensure smooth looping
+    const clone = marquee.cloneNode(true);
+    container.appendChild(clone);
+
+    // Adjust animation duration based on content width
+    const contentWidth = marquee.offsetWidth;
+    const duration = contentWidth / 50; // Adjust speed as needed
+    marquee.style.animationDuration = `${duration}s`;
+    clone.style.animationDuration = `${duration}s`;
+  }
+
+  document.addEventListener("astro:page-load", setupMarquee);
+</script>
