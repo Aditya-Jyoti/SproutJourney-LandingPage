@@ -7,7 +7,7 @@
       <span class="text-2xl">welcome</span>
       <span> Fill the form to become <br /> part of our alpha program </span>
     </div>
-    <form id="joinForm" class="w-full flex flex-col gap-4 flex-1" >
+    <form id="joinForm" class="w-full flex flex-col gap-4 flex-1">
       <input
         type="text"
         id="name"
@@ -132,8 +132,8 @@
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVteHVjYXNrc3ZyamJnenBsZndwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU5OTM3NzMsImV4cCI6MjA0MTU2OTc3M30.TP1dtBRVAHS4WN2hHFOrSVJS6oTNhkTxdcVampqTOyk"
   );
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById("joinForm");
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("joinForm") as HTMLFormElement;
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault(); // Prevent the default form submission
