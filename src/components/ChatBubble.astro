@@ -7,11 +7,10 @@ const paragraphs = message.split("\n\n");
 <div class="flex items-start gap-2.5 chat-bubble-container">
   <img class="lg:w-16 lg:h-16 w-8 h-8 rounded-full" src="/eli.png" alt="eli" />
   <div
-    class="flex flex-col w-full lg:min-w-[20rem] lg:max-w-[50rem] min-w-[10rem] max-w-[20rem] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700 chat-bubble"
+    class="flex flex-col w-full lg:min-w-[20rem] lg:max-w-[50rem] min-w-[10rem] max-w-[20rem] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl chat-bubble"
   >
     <div class="flex items-center space-x-2 rtl:space-x-reverse">
-      <span
-        class="lg:text-3xl text-xl font-semibold text-gray-900 dark:text-white"
+      <span class="lg:text-2xl text-xl font-semibold text-gray-900"
         >Eli the Eliphant</span
       >
     </div>
@@ -20,7 +19,7 @@ const paragraphs = message.split("\n\n");
     >
       {
         paragraphs.map((paragraph: string) => (
-          <p class="xl:text-2xl text-sm lg:p-2 p-1">{paragraph}</p>
+          <p class="xl:text-xl text-sm lg:p-2 p-1">{paragraph}</p>
         ))
       }
     </p>

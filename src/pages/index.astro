@@ -104,7 +104,7 @@ import Layout from "../layouts/Layout.astro";
 
     <!-- chatting -->
 
-    <div class="lg:flex hidden my-24 gap-12 mx-auto w-[90%]">
+    <div class="lg:flex hidden my-24 mx-auto w-[90%]">
       <div class="flex flex-col w-full gap-4">
         <div
           class="flex h-full w-full justify-start items-start flex-col gap-4"
@@ -114,11 +114,15 @@ import Layout from "../layouts/Layout.astro";
             message="Hello, my name is Eli the Elephant. \n\n Let's learn a story about health and hygiene! \n\n One sunny day in the jungle, my friend Zara the Zebra looked very tired. 'Eli, I feel so weak!' she said. \n\n 'Zara, have you been taking care of yourself?' I asked. \n\n 'I'm not sure,' she replied. \n\n I smiled and shared my simple health tips: \n\n 1. Wash Your Hands: 'Germs can make you sick, so always wash your hands before eating and after playing.' \n\n \n\n 2. Eat Healthy Foods: 'Fruits and veggies give you energy! Try not to eat too many sweets.' \n\n \n\n 3. Get Enough Sleep: 'Sleep helps you feel rested and ready to play.' \n\n \n\n 4. Stay Clean: 'Baths help wash away dirt and keep you healthy.'"
           />
         </div>
-        <div class="w-[80%]">
-          <audio controls class="w-full" id="audiosource">
-            <source src="/audio/storytime-main.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+
+        <div class="relative">
+          <button
+            id="audioIcon"
+            class="w-16 h-16 flex items-center justify-center bg-gray-800 text-white rounded-full shadow-md cursor-pointer"
+          >
+            <i id="icon" class="fa-solid fa-play text-3xl"></i>
+          </button>
+          <audio id="audioSource" src="/audio/storytime-main.mp3"></audio>
         </div>
       </div>
 
@@ -191,11 +195,14 @@ import Layout from "../layouts/Layout.astro";
           ;
         />
 
-        <div>
-          <audio controls class="w-full" id="audiosource">
-            <source src="/audio/storytime-main.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+        <div class="relative">
+          <button
+            id="audioIcon"
+            class="w-16 h-16 flex items-center justify-center bg-gray-800 text-white rounded-full shadow-md cursor-pointer"
+          >
+            <i id="icon" class="fa-solid fa-play text-3xl"></i>
+          </button>
+          <audio id="audioSource" src="/audio/storytime-main.mp3"></audio>
         </div>
       </div>
       <div class="flex flex-col gap-2">
@@ -216,11 +223,14 @@ import Layout from "../layouts/Layout.astro";
           By following these simple habits, you'll stay healthy and ready for fun adventures every day!`
           ;
         />
-        <div>
-          <audio controls class="w-full" id="audiosource">
-            <source src="/audio/learningtime-main.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+        <div class="relative">
+          <button
+            id="audioIcon"
+            class="w-16 h-16 flex items-center justify-center bg-gray-800 text-white rounded-full shadow-md cursor-pointer"
+          >
+            <i id="icon" class="fa-solid fa-play text-3xl"></i>
+          </button>
+          <audio id="audioSource" src="/audio/learningtime-main.mp3"></audio>
         </div>
       </div>
       <div class="flex flex-col gap-2">
@@ -237,11 +247,14 @@ import Layout from "../layouts/Layout.astro";
           `
           ;
         />
-        <div>
-          <audio controls class="w-full" id="audiosource">
-            <source src="/audio/thinkingtime-main.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+        <div class="relative">
+          <button
+            id="audioIcon"
+            class="w-16 h-16 flex items-center justify-center bg-gray-800 text-white rounded-full shadow-md cursor-pointer"
+          >
+            <i id="icon" class="fa-solid fa-play text-3xl"></i>
+          </button>
+          <audio id="audioSource" src="/audio/thinkingtime-main.mp3"></audio>
         </div>
       </div>
       <div class="flex flex-col gap-2">
@@ -264,11 +277,14 @@ import Layout from "../layouts/Layout.astro";
           `
           ;
         />
-        <div>
-          <audio controls class="w-full" id="audiosource">
-            <source src="/audio/funtime-main.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+        <div class="relative">
+          <button
+            id="audioIcon"
+            class="w-16 h-16 flex gap-4 items-center justify-center bg-gray-800 text-white rounded-full shadow-md cursor-pointer"
+          >
+            <i id="icon" class="fa-solid fa-play text-3xl"></i>
+          </button>
+          <audio id="audioSource" src="/audio/funtime-main.mp3"></audio>
         </div>
       </div>
     </div>
@@ -372,6 +388,9 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 
+  const audioIcon = document.getElementById("audioIcon") as HTMLButtonElement;
+  const icon = document.getElementById("icon") as HTMLElement;
+
   const storytime = document.getElementById("storytime") as HTMLButtonElement;
   const learningtime = document.getElementById(
     "learningtime"
@@ -411,6 +430,9 @@ import Layout from "../layouts/Layout.astro";
     storytime.classList.toggle("bg-primary");
     storytime.classList.toggle("text-primary");
 
+    icon.classList.remove("fa-pause");
+    icon.classList.add("fa-play");
+
     const message =
       "Hello, my name is Eli the Elephant. \n\n Let's learn a story about health and hygiene! \n\n One sunny day in the jungle, my friend Zara the Zebra looked very tired. 'Eli, I feel so weak!' she said. \n\n 'Zara, have you been taking care of yourself?' I asked. \n\n 'I'm not sure,' she replied. \n\n I smiled and shared my simple health tips: \n\n 1. Wash Your Hands: 'Germs can make you sick, so always wash your hands before eating and after playing.' \n\n \n\n 2. Eat Healthy Foods: 'Fruits and veggies give you energy! Try not to eat too many sweets.' \n\n \n\n 3. Get Enough Sleep: 'Sleep helps you feel rested and ready to play.' \n\n \n\n 4. Stay Clean: 'Baths help wash away dirt and keep you healthy.'";
 
@@ -435,6 +457,9 @@ import Layout from "../layouts/Layout.astro";
     learningtime.classList.toggle("text-secondary");
     learningtime.classList.toggle("bg-primary");
     learningtime.classList.toggle("text-primary");
+
+    icon.classList.remove("fa-pause");
+    icon.classList.add("fa-play");
 
     const message = `Hello! It's important to take care of your health and hygiene so you can stay strong, active, and happy. \n\n 
   First, always wash your hands with soap, especially before eating and after playing, to get rid of germs that can make you sick. \n\n 
@@ -466,6 +491,9 @@ import Layout from "../layouts/Layout.astro";
     thinkingtime.classList.toggle("bg-primary");
     thinkingtime.classList.toggle("text-primary");
 
+    icon.classList.remove("fa-pause");
+    icon.classList.add("fa-play");
+
     const message = `
     here's a question for you! \n\n If you see your friend about to cheat on a test, what would you do? \n\n Would you help them, \n\n tell the teacher, \n\n ignore it, \n\n or suggest they study instead? \n\n What do you think is the best choice?`;
 
@@ -490,6 +518,9 @@ import Layout from "../layouts/Layout.astro";
     funtime.classList.toggle("text-secondary");
     funtime.classList.toggle("bg-primary");
     funtime.classList.toggle("text-primary");
+
+    icon.classList.remove("fa-pause");
+    icon.classList.add("fa-play");
 
     audio.src = "/audio/funtime-main.mp3";
     audio.load();
@@ -532,4 +563,16 @@ I hope that made you smile! Keep having fun and remember to stay healthy and hap
   }
 `;
   document.head.appendChild(style);
+
+  audioIcon.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play();
+      icon.classList.remove("fa-play");
+      icon.classList.add("fa-pause");
+    } else {
+      audio.pause();
+      icon.classList.remove("fa-pause");
+      icon.classList.add("fa-play");
+    }
+  });
 </script>
