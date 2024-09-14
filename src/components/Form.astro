@@ -1,7 +1,3 @@
----
-
----
-
 <div
   class="flex flex-col gap-4 bg-pink-100 p-16 h-[60rem] w-[70rem] rounded-2xl"
   id="formcard"
@@ -11,7 +7,7 @@
       <span class="text-2xl">welcome</span>
       <span> Fill the form to become <br /> part of our alpha program </span>
     </div>
-    <form id="joinForm" class="w-full flex flex-col gap-4 flex-1">
+    <form id="joinForm" class="w-full flex flex-col gap-4 flex-1" >
       <input
         type="text"
         id="name"
@@ -136,55 +132,57 @@
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVteHVjYXNrc3ZyamJnenBsZndwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjU5OTM3NzMsImV4cCI6MjA0MTU2OTc3M30.TP1dtBRVAHS4WN2hHFOrSVJS6oTNhkTxdcVampqTOyk"
   );
 
-  const form = document.getElementById("joinForm") as HTMLFormElement;
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById("joinForm");
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); // Prevent the default form submission
 
-    const formData = new FormData(form);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const phone = formData.get("phone");
-    const role = formData.get("role");
-    const institute = formData.get("institute");
-    const instituteType = formData.get("institutetype");
-    const heard = formData.get("heard");
-    const students = formData.get("students");
+      const formData = new FormData(form);
+      const name = formData.get("name");
+      const email = formData.get("email");
+      const phone = formData.get("phone");
+      const role = formData.get("role");
+      const institute = formData.get("institute");
+      const instituteType = formData.get("institutetype");
+      const heard = formData.get("heard");
+      const students = formData.get("students");
 
-    if (
-      !name ||
-      !email ||
-      !phone ||
-      !role ||
-      !institute ||
-      !instituteType ||
-      !heard ||
-      !students
-    ) {
-      alert("Please fill all required fields");
-      return;
-    }
+      if (
+        !name ||
+        !email ||
+        !phone ||
+        !role ||
+        !institute ||
+        !instituteType ||
+        !heard ||
+        !students
+      ) {
+        alert("Please fill all required fields");
+        return;
+      }
 
-    try {
-      const { data, error } = await supabase.from("Users").insert({
-        name,
-        email,
-        phone,
-        role,
-        institute,
-        institute_type: instituteType,
-        heard_us: heard,
-        num_students: students,
-      });
+      try {
+        const { data, error } = await supabase.from("Users").insert({
+          name,
+          email,
+          phone,
+          role,
+          institute,
+          institute_type: instituteType,
+          heard_us: heard,
+          num_students: students,
+        });
 
-      if (error) throw error;
+        if (error) throw error;
 
-      console.log(data);
-      alert("User created successfully!");
-      form.reset();
-    } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred while creating the user.");
-    }
+        console.log("Data submitted successfully:", data);
+        alert("User created successfully!");
+        form.reset();
+      } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred while creating the user.");
+      }
+    });
   });
 </script>

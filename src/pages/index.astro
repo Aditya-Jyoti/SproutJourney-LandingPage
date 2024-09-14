@@ -10,7 +10,10 @@ import Layout from "../layouts/Layout.astro";
       class="fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] p-2 hidden"
       id="form"
     >
-      <button class="justify-end flex w-fit py-1 px-4 rounded-lg font-bold text-lg bg-black text-white " id="close">
+      <button
+        class="justify-end flex w-fit py-1 px-4 rounded-lg font-bold text-lg bg-black text-white"
+        id="close"
+      >
         close
       </button>
       <Form />
@@ -41,12 +44,10 @@ import Layout from "../layouts/Layout.astro";
       <div class="flex flex-col gap-4 lg:items-end w-full xl:mr-12">
         <button
           class="bg-secondary text-primary py-2 xl:px-12 xl:text-2xl lg:px-8 lg:text-xl lg:font-medium lg:w-fit w-full font-black uppercase rounded-3xl flex items-center justify-center"
-          id="alpha"
+          id="alphabutton"
         >
           join alpha program
         </button>
-
-        
 
         <button
           class="lg:border-[1px] border-0 border-secondary uppercase xl:text-2xl lg:text-xl text-secondary lg:font-semibold font-black lg:bg-transparent bg-primary lg:w-fit py-2 px-8 rounded-3xl"
@@ -372,15 +373,15 @@ import Layout from "../layouts/Layout.astro";
 </style>
 
 <script>
-  const open = document.getElementById("alpha") as HTMLButtonElement;
-  const close = document.getElementById("close") as HTMLButtonElement;
-  const form = document.getElementById("form") as HTMLButtonElement;
+  const open1 = document.getElementById("alphabutton") as HTMLButtonElement;
+  const close1 = document.getElementById("close") as HTMLButtonElement;
+  const form1 = document.getElementById("form") as HTMLButtonElement;
 
-  close.addEventListener("click", () => {
-    form.classList.toggle("hidden");
+  close1.addEventListener("click", () => {
+    form1.classList.toggle("hidden");
   });
-  open.addEventListener("click", () => {
-    form.classList.toggle("hidden");
+  open1.addEventListener("click", () => {
+    form1.classList.toggle("hidden");
   });
 
   declare global {

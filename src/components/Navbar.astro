@@ -1,3 +1,20 @@
+---
+import Form from "./Form.astro";
+---
+
+<div
+  class="fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] p-2 hidden"
+  id="formmain"
+>
+  <button
+    class="justify-end flex w-fit py-1 px-4 rounded-lg font-bold text-lg bg-black text-white"
+    id="closemain"
+  >
+    close
+  </button>
+  <Form />
+</div>
+
 <nav class="flex w-full justify-between items-center">
   <span
     class="font-heroeau font-medium xl:text-3xl text-3xl text-primary uppercase flex"
@@ -21,10 +38,15 @@
       class="lg:text-xl lg:flex hidden hover:underline underline-offset-4 duration-300 text-extra_text1 uppercase"
       >careers</a
     >
+    <a
+      href="/dashboard"
+      class="lg:text-xl lg:flex hidden hover:underline underline-offset-4 duration-300 text-extra_text1 uppercase"
+      >dashboard</a
+    >
 
     <button
       class="uppercase font-bold text-secondary bg-primary xl:px-8 px-6 xl:py-3 lg:py-2 lg:text-lg lg:flex hidden rounded-3xl"
-      >Join Us</button
+      id="alpha">Join Us</button
     >
   </div>
 
@@ -55,10 +77,15 @@
         class="hover:underline underline-offset-4 duration-300 text-extra_text1 text-opacity-0 transition-all uppercase"
         id="careers">careers</a
       >
+      <a
+        href="/dashboard"
+        class="hover:underline underline-offset-4 duration-300 text-extra_text1 text-opacity-0 transition-all uppercase"
+        id="careers">dashboard</a
+      >
 
       <button
         class="hover:underline underline-offset-4 duration-300 text-extra_text1 text-opacity-0 transition-all uppercase"
-        id="join">Join Us</button
+        id="alphamain">Join Us</button
       >
     </div>
   </div>
@@ -83,5 +110,16 @@
     contact.classList.toggle("text-opacity-0");
     careers.classList.toggle("text-opacity-0");
     join.classList.toggle("text-opacity-0");
+  });
+
+  const open = document.getElementById("alphamain") as HTMLButtonElement;
+  const close = document.getElementById("closemain") as HTMLButtonElement;
+  const form = document.getElementById("formmain") as HTMLButtonElement;
+
+  close.addEventListener("click", () => {
+    form.classList.toggle("hidden");
+  });
+  open.addEventListener("click", () => {
+    form.classList.toggle("hidden");
   });
 </script>
