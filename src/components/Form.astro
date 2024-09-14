@@ -2,37 +2,131 @@
 
 ---
 
-<div class="" style="background-color: rgb(240, 231, 190);">
-  <span class="xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-body">
-    Join Us
-  </span>
-  <form id="joinForm" class="flex flex-col gap-4">
-    <input
-      type="text"
-      name="name"
-      placeholder="Name"
-      class="p-2 rounded-xl"
-      required
-    />
-    <input
-      type="email"
-      name="email"
-      placeholder="Email"
-      class="p-2 rounded-xl"
-      required
-    />
-    <input
-      type="text"
-      name="institute"
-      placeholder="Institute"
-      class="p-2 rounded-xl"
-      required
-    />
-    <button type="submit" class="p-2 bg-primary text-white font-bold rounded-xl"
-      >Submit</button
-    >
-  </form>
+<div
+  class="flex flex-col gap-4 bg-pink-100 p-16 h-[60rem] w-[70rem] rounded-2xl"
+  id="formcard"
+>
+  <div class="flex w-full flex-grow">
+    <div class="w-full text-4xl flex flex-col p-8 flex-1">
+      <span class="text-2xl">welcome</span>
+      <span> Fill the form to become <br /> part of our alpha program </span>
+    </div>
+    <form id="joinForm" class="w-full flex flex-col gap-4 flex-1">
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        placeholder="Name"
+        required
+      />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        placeholder="Email"
+        required
+      />
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        placeholder="Phone"
+        required
+      />
+      <select
+        id="role"
+        name="role"
+        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        required
+      >
+        <option value="">Role</option>
+        <option value="student">student</option>
+        <option value="teacher">teacher</option>
+        <option value="organization">organization</option>
+      </select>
+      <input
+        type="text"
+        id="institute"
+        name="institute"
+        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        placeholder="Institute (if applicable)"
+        required
+      />
+      <select
+        id="institutetype"
+        name="institutetype"
+        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        required
+      >
+        <option value="">Institute Type</option>
+        <option value="type1">type 1</option>
+        <option value="type2">type 2</option>
+        <option value="type3">type 3</option>
+      </select>
+      <input
+        type="text"
+        id="heard"
+        name="heard"
+        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        placeholder="How did you hear about us?"
+        required
+      />
+      <input
+        type="number"
+        id="students"
+        name="students"
+        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        placeholder="number of students participating"
+        required
+      />
+
+      <div class="flex gap-4">
+        <input type="checkbox" id="promotional" name="promotional" />
+        <label for="promotional">
+          Would you like to receive promotional emails and updates about
+          SproutJourney?
+        </label>
+      </div>
+      <div class="flex gap-4">
+        <input type="checkbox" id="terms" name="terms" required />
+        <label for="terms">
+          I agree to the terms and conditions and the privacy policy of
+          SproutJourney
+        </label>
+      </div>
+
+      <button
+        type="submit"
+        class="bg-black text-white font-bold py-4 rounded-lg"
+        id="joinSubmitButton">JOIN THE ALPHA PROGRAM</button
+      >
+    </form>
+  </div>
+
+  <div
+    class="flex gap-4 items-center justify-center w-full text-4xl font-black"
+  >
+    <span class="text-[50px] text-primary">SPROUT JOURNEY</span>
+    <span class="divider">|</span>
+    <span class="transparent">ALPHA PROGRAM</span>
+  </div>
 </div>
+
+<style>
+  #formcard {
+    background-image: url("/bg-gradient.png");
+  }
+
+  .transparent {
+    -webkit-text-stroke: 2px black;
+    color: transparent;
+    font-size: 50px;
+    font-family: sans-serif;
+  }
+</style>
 
 <script>
   import { createClient } from "@supabase/supabase-js";
@@ -50,17 +144,38 @@
     const formData = new FormData(form);
     const name = formData.get("name");
     const email = formData.get("email");
+    const phone = formData.get("phone");
+    const role = formData.get("role");
     const institute = formData.get("institute");
+    const instituteType = formData.get("institutetype");
+    const heard = formData.get("heard");
+    const students = formData.get("students");
 
-    if (!name || !email || !institute) {
-      alert("Please fill all fields");
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !role ||
+      !institute ||
+      !instituteType ||
+      !heard ||
+      !students
+    ) {
+      alert("Please fill all required fields");
       return;
     }
 
     try {
-      const { data, error } = await supabase
-        .from("Users")
-        .insert({ name, email, institute });
+      const { data, error } = await supabase.from("Users").insert({
+        name,
+        email,
+        phone,
+        role,
+        institute,
+        institute_type: instituteType,
+        heard_us: heard,
+        num_students: students,
+      });
 
       if (error) throw error;
 
@@ -68,6 +183,7 @@
       alert("User created successfully!");
       form.reset();
     } catch (error) {
+      console.error("Error:", error);
       alert("An error occurred while creating the user.");
     }
   });
