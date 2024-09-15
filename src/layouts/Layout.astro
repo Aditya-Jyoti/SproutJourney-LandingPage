@@ -1,6 +1,8 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+
+const { pathname } = Astro.url;
 ---
 
 <!doctype html>
@@ -20,17 +22,25 @@ import Footer from "../components/Footer.astro";
     <title>Sprout Journey</title>
   </head>
   <body class="flex flex-col min-h-screen w-full text-body">
-    <div class="px-6 pt-4">
-      <Navbar />
-    </div>
+    {
+      pathname !== "/join" && (
+        <div class="px-6 pt-4">
+          <Navbar />
+        </div>
+      )
+    }
 
     <div class="flex-grow xl:w-[90%] xl:mx-auto p-2">
       <slot />
     </div>
 
-    <div class="">
-      <Footer />
-    </div>
+    {
+      pathname !== "/join" && (
+        <div class="">
+          <Footer />
+        </div>
+      )
+    }
   </body>
 </html>
 

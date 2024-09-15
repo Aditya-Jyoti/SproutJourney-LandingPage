@@ -1,24 +1,12 @@
 ---
 import ChatBubble from "../components/ChatBubble.astro";
-import Form from "../components/Form.astro";
 import Layout from "../layouts/Layout.astro";
+
+import { YouTube } from "@astro-community/astro-embed-youtube";
 ---
 
 <Layout>
   <main class="w-full flex flex-col">
-    <div
-      class="fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] p-2 hidden"
-      id="form"
-    >
-      <button
-        class="justify-end flex w-fit py-1 px-4 rounded-lg font-bold text-lg bg-black text-white"
-        id="close"
-      >
-        close
-      </button>
-      <Form />
-    </div>
-
     <!-- splash page -->
     <div
       class="flex flex-col lg:items-end lg:justify-start items-center justify-center xl:gap-12 lg:gap-12 gap-8 h-[55rem] my-8 rounded-[4rem] mx-12 lg:p-12 p-4"
@@ -42,18 +30,36 @@ import Layout from "../layouts/Layout.astro";
       </span>
 
       <div class="flex flex-col gap-4 lg:items-end w-full xl:mr-12">
-        <button
+        <a
+          href="/join"
           class="bg-secondary text-primary py-2 xl:px-12 xl:text-2xl lg:px-8 lg:text-xl lg:font-medium lg:w-fit w-full font-black uppercase rounded-3xl flex items-center justify-center"
-          id="alphabutton"
         >
           join alpha program
-        </button>
+        </a>
 
         <button
           class="lg:border-[1px] border-0 border-secondary uppercase xl:text-2xl lg:text-xl text-secondary lg:font-semibold font-black lg:bg-transparent bg-primary lg:w-fit py-2 px-8 rounded-3xl"
         >
           learn more
         </button>
+      </div>
+    </div>
+
+    <!-- demo page -->
+
+    <div
+      class="flex lg:flex-row flex-col lg:items-center lg:justify-between lg:w-[80%] lg:mx-auto lg:gap-0 gap-8 py-12"
+    >
+      <YouTube id="https://youtu.be/vjehhSUyJHg" class="w-full" />
+
+      <div
+        class="font-bold lg:text-9xl text-4xl lg:text-left text-center flex flex-col"
+      >
+        <span class="uppercase">
+          see <span class="text-extra_text2">us</span>
+        </span>
+        <span class="uppercase"> in </span>
+        <span class="uppercase text-extra_text2"> action </span>
       </div>
     </div>
 
@@ -114,17 +120,8 @@ import Layout from "../layouts/Layout.astro";
         >
           <ChatBubble
             message="Hello, my name is Eli the Elephant. \n\n Let's learn a story about health and hygiene! \n\n One sunny day in the jungle, my friend Zara the Zebra looked very tired. 'Eli, I feel so weak!' she said. \n\n 'Zara, have you been taking care of yourself?' I asked. \n\n 'I'm not sure,' she replied. \n\n I smiled and shared my simple health tips: \n\n 1. Wash Your Hands: 'Germs can make you sick, so always wash your hands before eating and after playing.' \n\n \n\n 2. Eat Healthy Foods: 'Fruits and veggies give you energy! Try not to eat too many sweets.' \n\n \n\n 3. Get Enough Sleep: 'Sleep helps you feel rested and ready to play.' \n\n \n\n 4. Stay Clean: 'Baths help wash away dirt and keep you healthy.'"
+            src="/audio/storytime-main.mp3"
           />
-        </div>
-
-        <div class="relative">
-          <button
-            id="audioIcon"
-            class="w-16 h-16 flex items-center justify-center bg-gray-800 text-white rounded-full shadow-md cursor-pointer"
-          >
-            <i id="icon" class="fa-solid fa-play text-3xl"></i>
-          </button>
-          <audio id="audioSource" src="/audio/storytime-main.mp3"></audio>
         </div>
       </div>
 
@@ -194,18 +191,9 @@ import Layout from "../layouts/Layout.astro";
         >
         <ChatBubble
           message="Hello, my name is Eli the Elephant. \n\n Let's learn a story about health and hygiene! \n\n One sunny day in the jungle, my friend Zara the Zebra looked very tired. 'Eli, I feel so weak!' she said. \n\n 'Zara, have you been taking care of yourself?' I asked. \n\n 'I'm not sure,' she replied. \n\n I smiled and shared my simple health tips: \n\n 1. Wash Your Hands: 'Germs can make you sick, so always wash your hands before eating and after playing.' \n\n \n\n 2. Eat Healthy Foods: 'Fruits and veggies give you energy! Try not to eat too many sweets.' \n\n \n\n 3. Get Enough Sleep: 'Sleep helps you feel rested and ready to play.' \n\n \n\n 4. Stay Clean: 'Baths help wash away dirt and keep you healthy.'"
+          src="/audio/storytime-main.mp3"
           ;
         />
-
-        <div class="relative">
-          <button
-            id="audioIcon"
-            class="w-16 h-16 flex items-center justify-center bg-gray-800 text-white rounded-full shadow-md cursor-pointer"
-          >
-            <i id="icon" class="fa-solid fa-play text-3xl"></i>
-          </button>
-          <audio id="audioSource" src="/audio/storytime-main.mp3"></audio>
-        </div>
       </div>
       <div class="flex flex-col gap-2">
         <span class="text-4xl pt-4 font-semibold text-primary ml-2"
@@ -223,17 +211,9 @@ import Layout from "../layouts/Layout.astro";
           Make sure you get enough sleep every night, as it helps your body rest and recover. \n\n 
           Finally, taking regular baths or showers helps keep your skin clean and fresh. \n\n 
           By following these simple habits, you'll stay healthy and ready for fun adventures every day!`
+          src="/audio/learningtime-main.mp3"
           ;
         />
-        <div class="relative">
-          <button
-            id="audioIcon"
-            class="w-16 h-16 flex items-center justify-center bg-gray-800 text-white rounded-full shadow-md cursor-pointer"
-          >
-            <i id="icon" class="fa-solid fa-play text-3xl"></i>
-          </button>
-          <audio id="audioSource" src="/audio/learningtime-main.mp3"></audio>
-        </div>
       </div>
       <div class="flex flex-col gap-2">
         <span class="text-4xl pt-4 font-semibold text-primary ml-2"
@@ -245,8 +225,8 @@ import Layout from "../layouts/Layout.astro";
         >
         <ChatBubble
           message=`
-              here's a question for you! \n\n If you see your friend about to cheat on a test, what would you do? \n\n Would you help them, \n\n tell the teacher, \n\n ignore it, \n\n or suggest they study instead? \n\n What do you think is the best choice?
-          `
+              here's a question for you! \n\n If you see your friend about to cheat on a test, what would you do? \n\n Would you help them, \n\n tell the teacher, \n\n ignore it, \n\n or suggest they study instead? \n\n What do you think is the best choice?`
+          src="/audio/thinkingtime-main.mp3"
           ;
         />
         <div class="relative">
@@ -277,17 +257,9 @@ import Layout from "../layouts/Layout.astro";
 
           I hope that made you smile! Keep having fun and remember to stay healthy and happy!
           `
+          src="/audio/funtime-main.mp3"
           ;
         />
-        <div class="relative">
-          <button
-            id="audioIcon"
-            class="w-16 h-16 flex gap-4 items-center justify-center bg-gray-800 text-white rounded-full shadow-md cursor-pointer"
-          >
-            <i id="icon" class="fa-solid fa-play text-3xl"></i>
-          </button>
-          <audio id="audioSource" src="/audio/funtime-main.mp3"></audio>
-        </div>
       </div>
     </div>
 
@@ -373,20 +345,9 @@ import Layout from "../layouts/Layout.astro";
 </style>
 
 <script>
-  const open1 = document.getElementById("alphabutton") as HTMLButtonElement;
-  const close1 = document.getElementById("close") as HTMLButtonElement;
-  const form1 = document.getElementById("form") as HTMLButtonElement;
-
-  close1.addEventListener("click", () => {
-    form1.classList.toggle("hidden");
-  });
-  open1.addEventListener("click", () => {
-    form1.classList.toggle("hidden");
-  });
-
   declare global {
     interface Window {
-      renderChatBubble: (message: string) => HTMLElement;
+      renderChatBubble: (message: string, src: string) => HTMLElement;
     }
   }
 
@@ -406,12 +367,7 @@ import Layout from "../layouts/Layout.astro";
     "messagecontainer"
   ) as HTMLDivElement;
 
-  let audio = document.getElementById("audiosource") as HTMLAudioElement;
-  console.log(audio);
-
-  document.addEventListener("DOMContentLoaded", () => {
-    audio.volume = 0.1;
-  });
+  let audio = document.getElementById("audioSource") as HTMLAudioElement;
 
   const chats = [storytime, learningtime, thinkingtime, funtime];
 
@@ -438,10 +394,11 @@ import Layout from "../layouts/Layout.astro";
     const message =
       "Hello, my name is Eli the Elephant. \n\n Let's learn a story about health and hygiene! \n\n One sunny day in the jungle, my friend Zara the Zebra looked very tired. 'Eli, I feel so weak!' she said. \n\n 'Zara, have you been taking care of yourself?' I asked. \n\n 'I'm not sure,' she replied. \n\n I smiled and shared my simple health tips: \n\n 1. Wash Your Hands: 'Germs can make you sick, so always wash your hands before eating and after playing.' \n\n \n\n 2. Eat Healthy Foods: 'Fruits and veggies give you energy! Try not to eat too many sweets.' \n\n \n\n 3. Get Enough Sleep: 'Sleep helps you feel rested and ready to play.' \n\n \n\n 4. Stay Clean: 'Baths help wash away dirt and keep you healthy.'";
 
-    audio.src = "/audio/storytime-main.mp3";
-    audio.load();
     setTimeout(() => {
-      const chatBubble = window.renderChatBubble(message);
+      const chatBubble = window.renderChatBubble(
+        message,
+        "/audio/storytime-main.mp3"
+      );
       messagecontainer.appendChild(chatBubble);
 
       void chatBubble.offsetWidth;
@@ -471,10 +428,11 @@ import Layout from "../layouts/Layout.astro";
   Finally, taking regular baths or showers helps keep your skin clean and fresh. \n\n 
   By following these simple habits, you'll stay healthy and ready for fun adventures every day!`;
 
-    audio.src = "/audio/learningtime-main.mp3";
-    audio.load();
     setTimeout(() => {
-      const chatBubble = window.renderChatBubble(message);
+      const chatBubble = window.renderChatBubble(
+        message,
+        "/audio/learningtime-main.mp3"
+      );
       messagecontainer.appendChild(chatBubble);
 
       void chatBubble.offsetWidth;
@@ -499,10 +457,11 @@ import Layout from "../layouts/Layout.astro";
     const message = `
     here's a question for you! \n\n If you see your friend about to cheat on a test, what would you do? \n\n Would you help them, \n\n tell the teacher, \n\n ignore it, \n\n or suggest they study instead? \n\n What do you think is the best choice?`;
 
-    audio.src = "/audio/thinkingtime-main.mp3";
-    audio.load();
     setTimeout(() => {
-      const chatBubble = window.renderChatBubble(message);
+      const chatBubble = window.renderChatBubble(
+        message,
+        "/audio/thinkingtime-main.mp3"
+      );
       messagecontainer.appendChild(chatBubble);
 
       void chatBubble.offsetWidth;
@@ -524,9 +483,6 @@ import Layout from "../layouts/Layout.astro";
     icon.classList.remove("fa-pause");
     icon.classList.add("fa-play");
 
-    audio.src = "/audio/funtime-main.mp3";
-    audio.load();
-
     const message = `
     Hello Aarav, it's Eli the Elephant! It's fun time, and I have a joke for you: \n\n
 
@@ -538,7 +494,10 @@ I hope that made you smile! Keep having fun and remember to stay healthy and hap
     `;
 
     setTimeout(() => {
-      const chatBubble = window.renderChatBubble(message);
+      const chatBubble = window.renderChatBubble(
+        message,
+        "/audio/funtime-main.mp3"
+      );
       messagecontainer.appendChild(chatBubble);
 
       void chatBubble.offsetWidth;

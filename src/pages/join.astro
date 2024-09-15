@@ -1,10 +1,44 @@
 <div
-  class="flex flex-col gap-4 bg-pink-100 p-16 h-[60rem] w-[70rem] rounded-2xl"
+  class="fixed p-24 bg-secondary rounded-2xl border-4 border-primary flex top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex-col items-center justify-center gap-8 hidden"
+  id="applicationbar"
+>
+  <div class="text-4xl font-semibold">
+    <span class="flex-1"> Download Our Demo Appliations </span>
+  </div>
+
+  <div class="flex justify-between gap-8">
+    <a
+      href="https://sproutjourney.s3.ap-south-1.amazonaws.com/Sproutjourney_Desktop_Alpha_0.01.zip"
+      download
+      class="flex flex-col items-center bg-primary text-secondary hover:text-primary hover:bg-secondary hover:border-2 hover:border-primary duration-300 transition-all p-4 font-bold text-xl rounded-xl w-60"
+    >
+      <span>.exe</span>
+      <span class="text-sm font-normal">Educational Institutions</span>
+      <span class="text-sm font-normal">Desktop Version</span>
+    </a>
+    <button
+      class="flex flex-col items-center bg-primary text-secondary p-4 font-bold text-xl rounded-xl w-60"
+    >
+      <span>.apk</span>
+      <span class="text-sm font-normal">Students</span>
+      <span class="text-sm font-normal">releasing on: 17th September</span>
+    </button>
+  </div>
+  <button class="text-lg flex w-full justify-end" id="closedownload"
+    >close</button
+  >
+</div>
+
+<div
+  class="flex flex-col gap-4 bg-pink-100 p-16 w-full min-h-screen"
   id="formcard"
 >
+  <div class="flex w-full justify-end text-3xl">
+    <a href="/">go back</a>
+  </div>
   <div class="flex w-full flex-grow">
-    <div class="w-full text-4xl flex flex-col p-8 flex-1">
-      <span class="text-2xl">welcome</span>
+    <div class="w-full text-6xl flex flex-col p-20 flex-1">
+      <span class="text-4xl">welcome</span>
       <span> Fill the form to become <br /> part of our alpha program </span>
     </div>
     <form id="joinForm" class="w-full flex flex-col gap-4 flex-1">
@@ -114,6 +148,9 @@
 <style>
   #formcard {
     background-image: url("/bg-gradient.png");
+    background-position: end;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .transparent {
@@ -126,6 +163,11 @@
 
 <script>
   import { createClient } from "@supabase/supabase-js";
+
+  const applicationbar = document.getElementById(
+    "applicationbar"
+  ) as HTMLDivElement;
+  const close = document.getElementById("closedownload") as HTMLButtonElement;
 
   const supabase = createClient(
     "https://emxucasksvrjbgzplfwp.supabase.co",
@@ -178,11 +220,16 @@
 
         console.log("Data submitted successfully:", data);
         alert("User created successfully!");
+        applicationbar.classList.toggle("hidden");
         form.reset();
       } catch (error) {
         console.error("Error:", error);
         alert("An error occurred while creating the user.");
       }
     });
+  });
+
+  close.addEventListener("click", () => {
+    applicationbar.classList.toggle("hidden");
   });
 </script>
