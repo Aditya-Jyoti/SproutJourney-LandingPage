@@ -57,10 +57,6 @@ const paragraphs = message.split("\n\n");
 </style>
 
 <script>
-  interface Window {
-    renderChatBubble: (message: string, src: string) => HTMLElement;
-  }
-
   // Client-side rendering function
   window.renderChatBubble = (message: string, src: string): HTMLElement => {
     const paragraphs = message.split("\n\n");
@@ -81,7 +77,7 @@ const paragraphs = message.split("\n\n");
         <p
           class="lg:text-2xl text-lg font-normal py-2.5 text-gray-900 dark:text-white flex flex-col gap-4"
         >
-          ${paragraphs.map((paragraph) => `<p class="text-2xl">${paragraph}</p>`).join("")}
+          ${paragraphs.map((paragraph) => `<p class="text-2xl py-2">${paragraph}</p>`).join("")}
         </p>
       </div>
       <div class="relative">
@@ -96,6 +92,32 @@ const paragraphs = message.split("\n\n");
     </div>
   </div>
     `;
+
+    const audioElement = container.querySelector(
+      "#audioSource"
+    ) as HTMLAudioElement;
+    const audioButton = container.querySelector(
+      "#audioIcon"
+    ) as HTMLButtonElement;
+    const iconElement = container.querySelector("#icon") as HTMLElement;
+
+    // Function to toggle play/pause
+    const toggleAudio = () => {
+      if (audioElement.paused) {
+        audioElement.play();
+        iconElement.className = "fa-solid fa-pause text-3xl";
+      } else {
+        audioElement.pause();
+        iconElement.className = "fa-solid fa-play text-3xl";
+      }
+    };
+
+    // Add click event listener to the button
+    audioButton.addEventListener("click", toggleAudio);
+
+    // Auto-play audio when the chat bubble is rendered
+    audioElement.load();
+
     return container;
   };
 </script>

@@ -118,10 +118,6 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           class="flex h-full w-full justify-start items-start flex-col gap-4"
           id="messagecontainer"
         >
-          <ChatBubble
-            message="Hello, my name is Eli the Elephant. \n\n Let's learn a story about health and hygiene! \n\n One sunny day in the jungle, my friend Zara the Zebra looked very tired. 'Eli, I feel so weak!' she said. \n\n 'Zara, have you been taking care of yourself?' I asked. \n\n 'I'm not sure,' she replied. \n\n I smiled and shared my simple health tips: \n\n 1. Wash Your Hands: 'Germs can make you sick, so always wash your hands before eating and after playing.' \n\n \n\n 2. Eat Healthy Foods: 'Fruits and veggies give you energy! Try not to eat too many sweets.' \n\n \n\n 3. Get Enough Sleep: 'Sleep helps you feel rested and ready to play.' \n\n \n\n 4. Stay Clean: 'Baths help wash away dirt and keep you healthy.'"
-            src="/audio/storytime-main.mp3"
-          />
         </div>
       </div>
 
@@ -379,6 +375,24 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
       chat.classList.add("text-secondary");
     });
   };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    messagecontainer.innerHTML = "";
+    const message =
+      "Hello, my name is Eli the Elephant. \n\n Let's learn a story about health and hygiene! \n\n One sunny day in the jungle, my friend Zara the Zebra looked very tired. 'Eli, I feel so weak!' she said. \n\n 'Zara, have you been taking care of yourself?' I asked. \n\n 'I'm not sure,' she replied. \n\n I smiled and shared my simple health tips: \n\n 1. Wash Your Hands: 'Germs can make you sick, so always wash your hands before eating and after playing.' \n\n \n\n 2. Eat Healthy Foods: 'Fruits and veggies give you energy! Try not to eat too many sweets.' \n\n \n\n 3. Get Enough Sleep: 'Sleep helps you feel rested and ready to play.' \n\n \n\n 4. Stay Clean: 'Baths help wash away dirt and keep you healthy.'";
+
+    setTimeout(() => {
+      const chatBubble = window.renderChatBubble(
+        message,
+        "/audio/storytime-main.mp3"
+      );
+      messagecontainer.appendChild(chatBubble);
+
+      void chatBubble.offsetWidth;
+
+      chatBubble.classList.add("chat-bubble-container");
+    }, 100);
+  });
 
   storytime.addEventListener("click", () => {
     messagecontainer.innerHTML = "";
