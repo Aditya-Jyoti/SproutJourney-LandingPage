@@ -1,5 +1,5 @@
 <div
-  class="fixed p-24 bg-secondary rounded-2xl border-4 border-primary flex top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex-col items-center justify-center gap-8 hidden"
+  class="fixed p-24 bg-secondary rounded-2xl border-4 border-primary top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex-col items-center justify-center gap-8 hidden"
   id="applicationbar"
 >
   <div class="text-4xl font-semibold">
@@ -37,17 +37,23 @@
   <div class="flex w-full justify-end text-3xl">
     <a href="/" class="text-6xl font-bold -mt-8"> x </a>
   </div>
-  <div class="flex w-full flex-grow">
-    <div class="w-full text-6xl flex flex-col p-20 flex-1">
-      <span class="text-4xl">welcome</span>
+  <div class="flex flex-col lg:flex-row w-full flex-grow">
+    <div
+      class="w-full text-6xl lg:flex flex-col lg:p-20 p-4 lg:text-left text-center flex-1"
+    >
+      <span class="text-4xl lg:flex hidden">welcome</span>
       <span> Fill the form to become <br /> part of our alpha program </span>
     </div>
-    <form id="joinForm" class="w-full flex flex-col gap-4 flex-1">
+
+    <form
+      id="joinForm"
+      class="w-full flex lg:text-lg text-4xl flex-col lg:gap-4 gap-8 flex-1"
+    >
       <input
         type="text"
         id="name"
         name="name"
-        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        class="bg-black text-white w-full p-2 lg:py-4 py-8 px-4 rounded-lg placeholder:text-white"
         placeholder="Name"
         required
       />
@@ -55,7 +61,7 @@
         type="email"
         id="email"
         name="email"
-        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        class="bg-black text-white w-full p-2 lg:py-4 py-8 px-4 rounded-lg placeholder:text-white"
         placeholder="Email"
         required
       />
@@ -63,14 +69,14 @@
         type="tel"
         id="phone"
         name="phone"
-        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        class="bg-black text-white w-full p-2 lg:py-4 py-8 px-4 rounded-lg placeholder:text-white"
         placeholder="Phone"
         required
       />
       <select
         id="role"
         name="role"
-        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        class="bg-black text-white w-full p-2 lg:py-4 py-8 px-4 rounded-lg placeholder:text-white"
         required
       >
         <option value="">Role</option>
@@ -82,14 +88,14 @@
         type="text"
         id="institute"
         name="institute"
-        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        class="bg-black text-white w-full p-2 lg:py-4 py-8 px-4 rounded-lg placeholder:text-white"
         placeholder="Institute (if applicable)"
         required
       />
       <select
         id="institutetype"
         name="institutetype"
-        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        class="bg-black text-white w-full p-2 lg:py-4 py-8 px-4 rounded-lg placeholder:text-white"
         required
       >
         <option value="">Institute Type</option>
@@ -101,7 +107,7 @@
         type="text"
         id="heard"
         name="heard"
-        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        class="bg-black text-white w-full p-2 lg:py-4 py-8 px-4 rounded-lg placeholder:text-white"
         placeholder="How did you hear about us?"
         required
       />
@@ -109,7 +115,7 @@
         type="number"
         id="students"
         name="students"
-        class="bg-black text-white w-full p-2 py-4 rounded-lg placeholder:text-white"
+        class="bg-black text-white w-full p-2 lg:py-4 py-8 px-4 rounded-lg placeholder:text-white"
         placeholder="number of students participating"
         required
       />
@@ -131,7 +137,7 @@
 
       <button
         type="submit"
-        class="bg-black text-white font-bold py-4 rounded-lg"
+        class="bg-black text-white font-bold lg:py-4 py-8 rounded-lg"
         id="joinSubmitButton">JOIN THE ALPHA PROGRAM</button
       >
     </form>
@@ -140,7 +146,7 @@
   <div
     class="flex gap-4 items-center justify-center w-full text-4xl font-black"
   >
-    <span class="text-[50px] text-primary">SPROUT JOURNEY</span>
+    <span class="text-[45px] text-primary">SPROUT JOURNEY</span>
     <span class="divider">|</span>
     <span class="transparent">ALPHA PROGRAM</span>
   </div>
@@ -157,7 +163,7 @@
   .transparent {
     -webkit-text-stroke: 2px black;
     color: transparent;
-    font-size: 50px;
+    font-size: 45px;
     font-family: sans-serif;
   }
 </style>
@@ -234,3 +240,12 @@
     applicationbar.classList.toggle("hidden");
   });
 </script>
+
+<style>
+  /* Mobile styles */
+  input[type="checkbox"] {
+    width: 30px;
+    height: 30px;
+    transform: translateY(1px);
+  }
+</style>

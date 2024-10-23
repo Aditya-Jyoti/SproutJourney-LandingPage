@@ -9,7 +9,7 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
   <main class="w-full flex flex-col">
     <!-- splash page -->
     <div
-      class="flex flex-col lg:items-end lg:justify-start items-center justify-center xl:gap-12 lg:gap-12 gap-8 h-[55rem] my-8 rounded-[4rem] mx-12 lg:p-12 p-4"
+      class="md:flex flex-col lg:items-end lg:justify-start items-center justify-center xl:gap-12 lg:gap-12 gap-8 h-[55rem] my-8 rounded-[4rem] mx-12 lg:p-12 p-4 hidden"
       id="background"
     >
       <span
@@ -45,15 +45,34 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
       </div>
     </div>
 
+    <!-- splash page mobile -->
+    <!-- <div>
+      <img src="/background.png" alt="background" />
+
+      <div>
+        <span> Sprout Smarter: Learn, Play, and Grow with AI </span>
+      </div>
+    </div> -->
+
     <!-- demo page -->
 
     <div
-      class="flex lg:flex-row flex-col lg:items-center lg:justify-between lg:w-[90%] lg:mx-auto gap-8 py-12"
+      class="flex lg:flex-row flex-col lg:items-center lg:justify-between lg:w-[90%] lg:mx-auto md:gap-8 gap-4 md:py-12 py-4"
     >
-      <YouTube id="https://youtu.be/vjehhSUyJHg" class="w-full" />
+      <div
+        class="font-bold text-4xl text-center flex md:hidden gap-2 items-center justify-center"
+      >
+        <span class="uppercase">
+          see <span class="text-extra_text2">us</span>
+        </span>
+        <span class="uppercase"> in </span>
+        <span class="uppercase text-extra_text2"> action </span>
+      </div>
+
+      <YouTube id="https://youtu.be/vjehhSUyJHg" class="w-full rounded-xl" />
 
       <div
-        class="font-bold xl:text-9xl lg:text-7xl md:text-5xl text-4xl lg:text-left text-center flex flex-col"
+        class="font-bold xl:text-9xl lg:text-7xl md:text-5xl text-4xl lg:text-left text-center md:flex hidden flex-col"
       >
         <span class="uppercase">
           see <span class="text-extra_text2">us</span>
@@ -76,9 +95,9 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           <span class="text-extra_text2">with</span> Artificial Intelligence
         </span>
 
-        <div class="flex lg:flex-row flex-col gap-4 items-center lg:items-end">
+        <div class="flex lg:flex-row flex-col gap-4 lg:items-end">
           <div
-            class="text-lg lg:text-2xl font-normal w-[80%] flex flex-col gap-4"
+            class="text-lg lg:text-2xl font-normal lg:w-[80%] flex flex-col gap-4"
           >
             <span>
               Recent research shows that AI-based educational tools
@@ -225,7 +244,7 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           src="/audio/thinkingtime-main.mp3"
           ;
         />
-        <div class="relative">
+        <div class="relative hidden md:block">
           <button
             id="audioIcon"
             class="w-16 h-16 flex items-center justify-center bg-gray-800 text-white rounded-full shadow-md cursor-pointer"
@@ -262,7 +281,7 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
     <!-- memorial -->
 
     <div
-      class="bg-secondary text-primary m-8 p-8 rounded-[3rem] flex flex-col gap-4"
+      class="bg-secondary text-primary m-8 p-8 rounded-[3rem] md:flex flex-col gap-4 hidden"
     >
       <span
         class="xl:text-5xl lg:text-4xl md:text-3xl text-3xl font-header font-semibold text-center lg:text-left"
@@ -327,6 +346,89 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           <span class="italic text-lg">Parent of a 9 year old</span>
         </div>
       </div>
+    </div>
+
+    <div class="text-primary md:hidden flex flex-col gap-4 py-8">
+      <h2
+        class=" text-4xl font-header font-bold text-center lg:text-left"
+      >
+        Testimonials
+      </h2>
+
+      <div class="relative h-[43rem] overflow-hidden" id="carousel">
+        <div
+          class="absolute w-full transition-transform duration-500 ease-in-out flex"
+          id="carouselTrack"
+        >
+          <!-- Slide 1 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div
+              class="bg-primary text-white rounded-xl p-8 h-full flex flex-col gap-4"
+            >
+              <h3 class="font-body font-bold text-2xl">
+                Prasansa Agrawal, <span class="text-lg" >Hyderabad</span>
+              </h3>
+              <p class="flex-grow text-lg">
+                SproutJourney has been life-changing for my son, who has a
+                learning disorder. Eli the Elephant's interactive stories and
+                tailored pacing have made it easier for him to understand
+                complex topics like ethics and social values. The personalized
+                experience allows him to learn without feeling overwhelmed, and
+                I've noticed a marked improvement in his ability to think
+                critically. The best part? He's excited about learning for the
+                first time
+              </p>
+              <span class="italic text-lg"
+                >Parent of a Child with a Learning Disorder</span
+              >
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div
+              class="bg-primary text-white rounded-xl p-8 h-full flex flex-col gap-4"
+            >
+              <h3 class="font-body font-bold text-2xl">
+                Anjali Deshmukh, <br> <span class="text-lg" >Delhi</span>
+              </h3>
+              <p class="flex-grow text-lg">
+                Kushal Agrawal, the founder of SproutJourney, gave us access to
+                test the platform, and even in this early stage, it's been a
+                fantastic learning tool. My Grade 3 students are hooked on Eli
+                the Elephant's lessons! The stories not only keep them engaged,
+                but they're also learning valuable life lessons and ethics. The
+                adaptive quizzes encourage deeper thinking rather than rote
+                learning. I can't wait for the full release, but even now, it's
+                making a positive impact in my classroom.
+              </p>
+              <span class="italic text-lg">Grade 3 Teacher</span>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="w-full flex-shrink-0 px-4">
+            <div
+              class="bg-primary text-white rounded-xl p-8 h-full flex flex-col gap-4"
+            >
+              <h3 class="font-body font-bold text-2xl">
+                Rohan Mehta, <br> <span class="text-lg" >Hyderabad</span>
+              </h3>
+              <p class="flex-grow text-lg">
+                My daughter loves Eli the Elephant's lessons! She's learning
+                about ethics and social sciences in a way that's both
+                entertaining and meaningful. I've seen her become more
+                thoughtful in her daily interactions, often discussing the
+                stories and lessons she's learned. SproutJourney has made it
+                easy for her to grasp important values while having fun.
+              </p>
+              <span class="italic text-lg">Parent of a 9 year old</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center gap-2 -mt-8" id="carouselDots"></div>
     </div>
   </main>
 </Layout>
@@ -550,4 +652,55 @@ I hope that made you smile! Keep having fun and remember to stay healthy and hap
       icon.classList.add("fa-play");
     }
   });
+
+  const carousel = {
+    currentIndex: 0,
+    track: document.getElementById("carouselTrack") as HTMLDivElement,
+    slides: document.querySelectorAll("#carouselTrack > div"),
+    dotsContainer: document.getElementById("carouselDots") as HTMLDivElement,
+
+    init() {
+      // Create dots
+      this.slides.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.className = `w-3 h-3 rounded-full transition-colors duration-300 ${
+          index === 0 ? "bg-primary" : "bg-gray-300"
+        }`;
+        dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+        dot.onclick = () => this.goToSlide(index);
+        this.dotsContainer.appendChild(dot);
+      });
+
+      // Start auto rotation
+      this.startAutoRotation();
+    },
+
+    goToSlide(index: number) {
+      this.currentIndex = index;
+      this.updateCarousel();
+    },
+
+    updateCarousel() {
+      // Update track position
+      this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+
+      // Update dots
+      const dots = this.dotsContainer.children;
+      Array.from(dots).forEach((dot, index) => {
+        dot.className = `w-3 h-3 rounded-full transition-colors duration-300 ${
+          index === this.currentIndex ? "bg-primary" : "bg-gray-300"
+        }`;
+      });
+    },
+
+    startAutoRotation() {
+      setInterval(() => {
+        this.currentIndex = (this.currentIndex + 1) % this.slides.length;
+        this.updateCarousel();
+      }, 2000); // Change slide every 5 seconds
+    },
+  };
+
+  // Initialize carousel
+  carousel.init();
 </script>
