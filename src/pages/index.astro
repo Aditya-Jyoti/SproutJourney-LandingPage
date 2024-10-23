@@ -9,7 +9,7 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
   <main class="w-full flex flex-col">
     <!-- splash page -->
     <div
-      class="md:flex flex-col lg:items-end lg:justify-start items-center justify-center xl:gap-12 lg:gap-12 gap-8 h-[55rem] my-8 rounded-[4rem] mx-12 lg:p-12 p-4 hidden"
+      class="flex flex-col lg:items-end lg:justify-start items-center justify-center xl:gap-12 lg:gap-12 gap-8 h-[55rem] my-8 rounded-[4rem] mx-12 lg:p-12 p-4"
       id="background"
     >
       <span
@@ -37,11 +37,12 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           join alpha program
         </a>
 
-        <button
-          class="lg:border-[1px] border-0 border-secondary uppercase xl:text-2xl lg:text-xl text-secondary lg:font-semibold font-black lg:bg-transparent bg-primary lg:w-fit py-2 px-8 rounded-3xl"
+        <a
+          href="/about"
+          class="lg:border-[1px] text-center border-0 border-secondary uppercase xl:text-2xl lg:text-xl text-secondary lg:font-semibold font-black lg:bg-transparent bg-primary lg:w-fit py-2 px-8 rounded-3xl"
         >
           learn more
-        </button>
+        </a>
       </div>
     </div>
 
@@ -349,9 +350,7 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
     </div>
 
     <div class="text-primary md:hidden flex flex-col gap-4 py-8">
-      <h2
-        class=" text-4xl font-header font-bold text-center lg:text-left"
-      >
+      <h2 class="text-4xl font-header font-bold text-center lg:text-left">
         Testimonials
       </h2>
 
@@ -366,7 +365,7 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
               class="bg-primary text-white rounded-xl p-8 h-full flex flex-col gap-4"
             >
               <h3 class="font-body font-bold text-2xl">
-                Prasansa Agrawal, <span class="text-lg" >Hyderabad</span>
+                Prasansa Agrawal, <span class="text-lg">Hyderabad</span>
               </h3>
               <p class="flex-grow text-lg">
                 SproutJourney has been life-changing for my son, who has a
@@ -390,7 +389,8 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
               class="bg-primary text-white rounded-xl p-8 h-full flex flex-col gap-4"
             >
               <h3 class="font-body font-bold text-2xl">
-                Anjali Deshmukh, <br> <span class="text-lg" >Delhi</span>
+                Anjali Deshmukh, <br />
+                <span class="text-lg">Delhi</span>
               </h3>
               <p class="flex-grow text-lg">
                 Kushal Agrawal, the founder of SproutJourney, gave us access to
@@ -412,7 +412,8 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
               class="bg-primary text-white rounded-xl p-8 h-full flex flex-col gap-4"
             >
               <h3 class="font-body font-bold text-2xl">
-                Rohan Mehta, <br> <span class="text-lg" >Hyderabad</span>
+                Rohan Mehta, <br />
+                <span class="text-lg">Hyderabad</span>
               </h3>
               <p class="flex-grow text-lg">
                 My daughter loves Eli the Elephant's lessons! She's learning
