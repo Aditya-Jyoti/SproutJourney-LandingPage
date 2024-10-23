@@ -597,11 +597,8 @@ const people_big = [
     const clone = marquee.cloneNode(true) as HTMLDivElement;
     container.appendChild(clone);
 
-    // Adjust animation duration based on content width
-    const contentWidth = marquee.offsetWidth;
-    const duration = contentWidth / 50; // Adjust speed as needed
-    marquee.style.animationDuration = `${duration}s`;
-    clone.style.animationDuration = `${duration}s`;
+    marquee.style.animationDuration = `10000s`;
+    clone.style.animationDuration = `100s`;
   }
 
   document.addEventListener("astro:page-load", setupMarquee);
