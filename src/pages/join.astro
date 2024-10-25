@@ -1,5 +1,5 @@
 <div
-  class="fixed lg:p-24 p-4 bg-secondary rounded-2xl border-4 border-primary top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex-col items-center justify-center gap-8 hidden1  "
+  class="fixed lg:p-24 p-4 bg-secondary rounded-2xl border-4 border-primary top-1/2 z-50 left-1/2 translate-x-[-50%] translate-y-[-50%] flex-col items-center justify-center gap-8"
   id="applicationbar"
 >
   <div class="text-4xl font-semibold w-full text-center p-12">
@@ -8,25 +8,26 @@
 
   <div class="flex lg:flex-row flex-col justify-between items-center gap-8">
     <a
-      href="https://sproutjourney.s3.ap-south-1.amazonaws.com/Sproutjourney_Desktop_Alpha_0.01.zip"
+      href="/desktop.zip"
       download
       class="flex flex-col items-center bg-primary text-secondary hover:text-primary hover:bg-secondary hover:border-2 hover:border-primary duration-300 transition-all p-4 font-bold text-xl rounded-xl w-60"
     >
       <span>.exe</span>
       <span class="text-sm font-normal">Educational Institutions</span>
-      <span class="text-sm font-normal">Desktop Version</span>
+      <span class="text-sm font-normal">Desktop Version v0.2</span>
     </a>
     <a
       href="https://sproutjourney.s3.ap-south-1.amazonaws.com/Sproutjourney_Mobile_Alpha_0.01.apk"
-      class="flex flex-col items-center bg-primary text-secondary p-4 font-bold text-xl rounded-xl w-60"
+      class="flex flex-col items-center bg-primary text-secondary p-4 font-bold text-xl rounded-xl w-60 hover:text-primary hover:bg-secondary hover:border-2 hover:border-primary duration-300 transition-all"
     >
       <span>.apk</span>
       <span class="text-sm font-normal">Students</span>
-      <span class="text-sm font-normal">Mobile Version</span>
+      <span class="text-sm font-normal">Mobile Version v0.1</span>
     </a>
   </div>
-  <button class="text-3xl flex w-full p-12 lg:justify-end justify-center" id="closedownload"
-    >close</button
+  <button
+    class="text-3xl flex w-full p-12 lg:justify-end justify-center"
+    id="closedownload">close</button
   >
 </div>
 
