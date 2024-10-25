@@ -49,14 +49,15 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
 
     <!-- splash page mobile -->
 
-    <div>
-      <img src="/background.png" alt="background" class="scale-110 my-4" />
+    <div class="lg:hidden block">
+      <img
+        src="/background-mobile.png"
+        alt="background"
+        class="scale-110 my-4"
+      />
 
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-2">
         <span class="text-4xl font-bold">
-          Sprout <span class="text-extra_text1">Smarter:</span>
-          <br />
-
           <span class="text-[1.6rem]">
             Learn, Play, and Grow with
 
@@ -73,17 +74,19 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           Fun, and Tailored for every learner.
         </span>
 
-        <div class="flex flex-col gap-2 mt-2 lg:items-end w-full xl:mr-12">
+        <div
+          class="flex flex-col gap-2 mt-2 -mb-8 lg:items-end w-full xl:mr-12"
+        >
           <a
             href="/join"
-            class="bg-secondary text-primary py-2 xl:px-12 xl:text-2xl lg:px-8 lg:text-xl lg:font-medium lg:w-fit w-full font-black uppercase rounded-3xl flex items-center justify-center"
+            class="bg-primary text-secondary py-2 xl:px-12 xl:text-2xl lg:px-8 lg:text-xl lg:font-medium lg:w-fit w-full font-black uppercase rounded-3xl flex items-center justify-center"
           >
             join alpha program
           </a>
 
           <a
             href="/about"
-            class="lg:border-[1px] text-center border-0 border-secondary uppercase xl:text-2xl lg:text-xl text-secondary lg:font-semibold font-black lg:bg-transparent bg-primary lg:w-fit py-2 px-8 rounded-3xl"
+            class="lg:border-[1px] text-center border-0 border-secondary uppercase xl:text-2xl lg:text-xl text-primary lg:font-semibold font-black lg:bg-transparent bg-secondary lg:w-fit py-2 px-8 rounded-3xl"
           >
             learn more
           </a>
@@ -158,9 +161,9 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           </div>
 
           <img
-            src="/bear.png"
-            alt="Bear illustration"
-            class="w-[24rem] h-[24rem]"
+            src="/tomandjerry.jpg"
+            alt="tom and jerry illustration"
+            class="h-[24rem] rounded-xl"
           />
         </div>
       </div>
@@ -174,6 +177,17 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           class="flex h-full w-full justify-start items-start flex-col gap-4"
           id="messagecontainer"
         >
+          <ChatBubble
+            message=`Hello! It's important to take care of your health and hygiene so you can stay strong, active, and happy. \n\n 
+        First, always wash your hands with soap, especially before eating and after playing, to get rid of germs that can make you sick. \n\n 
+        Eating healthy foods like fruits, vegetables, and whole grains gives your body the energy it needs to grow and stay strong. \n\n 
+        Brushing your teeth twice a day helps protect them from cavities and keeps your smile bright. \n\n 
+        Make sure you get enough sleep every night, as it helps your body rest and recover. \n\n 
+        Finally, taking regular baths or showers helps keep your skin clean and fresh. \n\n 
+        By following these simple habits, you'll stay healthy and ready for fun adventures every day!`
+            src="/audio/learningtime-main.mp3"
+            ;
+          />
         </div>
       </div>
 
@@ -243,35 +257,6 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
         >
 
         <AudioElement source="/audio/storytime-main.mp3" id="storytime" />
-
-        <div
-          class="bg-gray-200 flex flex-col gap-2 p-4 rounded-br-3xl rounded-bl-xl m-4"
-        >
-          <span>Hello, my name is Eli the Elephant.</span>
-          <span>Let's learn a story about health and hygiene!</span>
-          <span
-            >One sunny day in the jungle, my friend Zara the Zebra looked very
-            tired. 'Eli, I feel so weak!' she said.</span
-          >
-          <span>'Zara, have you been taking care of yourself?' I asked.</span>
-          <span>'I'm not sure,' she replied.</span>
-          <span>I smiled and shared my simple health tips:</span>
-          <span
-            >1. Wash Your Hands: 'Germs can make you sick, so always wash your
-            hands before eating and after playing.'</span
-          >
-          <span
-            >2. Eat Healthy Foods: 'Fruits and veggies give you energy! Try not
-            to eat too many sweets.'</span
-          >
-          <span
-            >3. Get Enough Sleep: 'Sleep helps you feel rested and ready to
-            play.'</span
-          >
-          <span
-            >4. Stay Clean: 'Baths help wash away dirt and keep you healthy.'</span
-          >
-        </div>
       </div>
       <div class="flex flex-col gap-2">
         <span class="text-4xl pt-4 font-semibold text-primary ml-2"
@@ -283,39 +268,6 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
         >
 
         <AudioElement source="/audio/learningtime-main.mp3" id="learningtime" />
-
-        <div
-          class="bg-gray-200 flex flex-col gap-2 p-4 rounded-br-3xl rounded-bl-xl m-4"
-        >
-          <span
-            >Hello! It's important to take care of your health and hygiene so
-            you can stay strong, active, and happy.</span
-          >
-          <span
-            >First, always wash your hands with soap, especially before eating
-            and after playing, to get rid of germs that can make you sick.</span
-          >
-          <span
-            >Eating healthy foods like fruits, vegetables, and whole grains
-            gives your body the energy it needs to grow and stay strong.</span
-          >
-          <span
-            >Brushing your teeth twice a day helps protect them from cavities
-            and keeps your smile bright.</span
-          >
-          <span
-            >Make sure you get enough sleep every night, as it helps your body
-            rest and recover.</span
-          >
-          <span
-            >Finally, taking regular baths or showers helps keep your skin clean
-            and fresh.</span
-          >
-          <span
-            >By following these simple habits, you'll stay healthy and ready for
-            fun adventures every day!</span
-          >
-        </div>
       </div>
       <div class="flex flex-col gap-2">
         <span class="text-4xl pt-4 font-semibold text-primary ml-2"
@@ -327,21 +279,6 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
         >
 
         <AudioElement source="/audio/thinkingtime-main.mp3" id="thinkingtime" />
-
-        <div
-          class="bg-gray-200 flex flex-col gap-2 p-4 rounded-br-3xl rounded-bl-xl m-4"
-        >
-          <span>Here's a question for you!</span>
-          <span
-            >If you see your friend about to cheat on a test, what would you do?</span
-          >
-          <span>Would you help them,</span>
-          <span>tell the teacher,</span>
-          <span>ignore it,</span>
-          <span>or suggest they study instead?</span>
-          <span>What do you think is the best choice?</span>
-        </div>
-
         <div class="relative hidden md:block">
           <button
             id="audioIcon"
@@ -362,21 +299,6 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
         >
 
         <AudioElement source="/audio/funtime-main.mp3" id="funtime" />
-
-        <div
-          class="bg-gray-200 flex flex-col gap-2 p-4 rounded-br-3xl rounded-bl-xl m-4"
-        >
-          <span
-            >Hello Aarav, it's Eli the Elephant! It's fun time, and I have a
-            joke for you:</span
-          >
-          <span>Why don't elephants use computers?</span>
-          <span>Because they're afraid of the mouse!</span>
-          <span
-            >I hope that made you smile! Keep having fun and remember to stay
-            healthy and happy!</span
-          >
-        </div>
       </div>
     </div>
 

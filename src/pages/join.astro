@@ -1,12 +1,12 @@
 <div
-  class="fixed p-24 bg-secondary rounded-2xl border-4 border-primary top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex-col items-center justify-center gap-8 hidden"
+  class="fixed lg:p-24 p-4 bg-secondary rounded-2xl border-4 border-primary top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] flex-col items-center justify-center gap-8 hidden1  "
   id="applicationbar"
 >
-  <div class="text-4xl font-semibold">
-    <span class="flex-1"> Download Our Demo Applications </span>
+  <div class="text-4xl font-semibold w-full text-center p-12">
+    <span class="flex-1 text-center"> Download Our Demo Applications </span>
   </div>
 
-  <div class="flex justify-between gap-8">
+  <div class="flex lg:flex-row flex-col justify-between items-center gap-8">
     <a
       href="https://sproutjourney.s3.ap-south-1.amazonaws.com/Sproutjourney_Desktop_Alpha_0.01.zip"
       download
@@ -25,7 +25,7 @@
       <span class="text-sm font-normal">Mobile Version</span>
     </a>
   </div>
-  <button class="text-lg flex w-full justify-end" id="closedownload"
+  <button class="text-3xl flex w-full p-12 lg:justify-end justify-center" id="closedownload"
     >close</button
   >
 </div>

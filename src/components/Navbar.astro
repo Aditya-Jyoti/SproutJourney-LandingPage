@@ -33,9 +33,9 @@
     >
   </div>
 
-  <div class="lg:hidden flex">
+  <div class="lg:hidden ">
     <button
-      class="lg:hidden flex items-center absolute z-20 right-8 top-5 justify-center text-primary text-3xl"
+      class="lg:hidden flex items-center fixed z-[100] bg-white rounded-full w-12 h-12 right-3 drop-shadow-2xl top-3 justify-center text-primary text-3xl"
       id="navbutton"
     >
       <i class="fa-solid fa-bars"></i>
@@ -45,6 +45,11 @@
       class="h-0 w-0 transition-all rounded-xl duration-300 z-10 bg-white fixed top-0 left-0 flex flex-col text-4xl justify-around items-center"
       id="nav"
     >
+      <a
+        href="/home"
+        class="hover:underline underline-offset-4 duration-300 text-extra_text1 text-opacity-0 transition-all uppercase"
+        id="home">home</a
+      >
       <a
         href="/about"
         class="hover:underline underline-offset-4 duration-300 text-extra_text1 text-opacity-0 transition-all uppercase"
@@ -84,6 +89,7 @@
   const contact = document.getElementById("contact") as HTMLAnchorElement;
   const careers = document.getElementById("careers") as HTMLAnchorElement;
   const join = document.getElementById("join") as HTMLAnchorElement;
+  const home = document.getElementById("home") as HTMLAnchorElement;
 
   navbutton.addEventListener("click", () => {
     nav.classList.toggle("h-0");
@@ -95,5 +101,6 @@
     contact.classList.toggle("text-opacity-0");
     careers.classList.toggle("text-opacity-0");
     join.classList.toggle("text-opacity-0");
+    home.classList.toggle("text-opacity-0");
   });
 </script>
