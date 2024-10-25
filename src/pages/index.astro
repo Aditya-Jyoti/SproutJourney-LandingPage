@@ -1,4 +1,5 @@
 ---
+import AudioElement from "../components/AudioElement.astro";
 import ChatBubble from "../components/ChatBubble.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -9,7 +10,7 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
   <main class="w-full flex flex-col">
     <!-- splash page -->
     <div
-      class="flex flex-col lg:items-end lg:justify-start items-center justify-center xl:gap-12 lg:gap-12 gap-8 h-[55rem] my-8 rounded-[4rem] mx-12 lg:p-12 p-4"
+      class="md:flex flex-col lg:items-end lg:justify-start items-center justify-center xl:gap-12 lg:gap-12 gap-8 h-[55rem] my-8 rounded-[4rem] mx-12 lg:p-12 p-4 hidden"
       id="background"
     >
       <span
@@ -47,18 +48,53 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
     </div>
 
     <!-- splash page mobile -->
-    <!-- <div>
-      <img src="/background.png" alt="background" />
 
-      <div>
-        <span> Sprout Smarter: Learn, Play, and Grow with AI </span>
+    <div>
+      <img src="/background.png" alt="background" class="scale-110 my-4" />
+
+      <div class="flex flex-col gap-4">
+        <span class="text-4xl font-bold">
+          Sprout <span class="text-extra_text1">Smarter:</span>
+          <br />
+
+          <span class="text-[1.6rem]">
+            Learn, Play, and Grow with
+
+            <span class="text-extra_text1">AI</span>
+          </span>
+        </span>
+
+        <span class="font-light">
+          <strong class="text-lg">
+            Create and deliver immersive learning experiences
+          </strong>
+          <br />
+          that engage students through AI-powered games, Multilingual, Adaptive,
+          Fun, and Tailored for every learner.
+        </span>
+
+        <div class="flex flex-col gap-2 mt-2 lg:items-end w-full xl:mr-12">
+          <a
+            href="/join"
+            class="bg-secondary text-primary py-2 xl:px-12 xl:text-2xl lg:px-8 lg:text-xl lg:font-medium lg:w-fit w-full font-black uppercase rounded-3xl flex items-center justify-center"
+          >
+            join alpha program
+          </a>
+
+          <a
+            href="/about"
+            class="lg:border-[1px] text-center border-0 border-secondary uppercase xl:text-2xl lg:text-xl text-secondary lg:font-semibold font-black lg:bg-transparent bg-primary lg:w-fit py-2 px-8 rounded-3xl"
+          >
+            learn more
+          </a>
+        </div>
       </div>
-    </div> -->
+    </div>
 
     <!-- demo page -->
 
     <div
-      class="flex lg:flex-row flex-col lg:items-center lg:justify-between lg:w-[90%] lg:mx-auto md:gap-8 gap-4 md:py-12 py-4"
+      class="flex lg:flex-row flex-col lg:items-center lg:justify-between lg:w-[90%] lg:mx-auto md:gap-8 gap-4 md:py-12 py-4 lg:mt-0 mt-8"
     >
       <div
         class="font-bold text-4xl text-center flex md:hidden gap-2 items-center justify-center"
@@ -205,11 +241,37 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           >Dive into exciting stories with Eli the Elephant, making learning fun
           and memorable.</span
         >
-        <ChatBubble
-          message="Hello, my name is Eli the Elephant. \n\n Let's learn a story about health and hygiene! \n\n One sunny day in the jungle, my friend Zara the Zebra looked very tired. 'Eli, I feel so weak!' she said. \n\n 'Zara, have you been taking care of yourself?' I asked. \n\n 'I'm not sure,' she replied. \n\n I smiled and shared my simple health tips: \n\n 1. Wash Your Hands: 'Germs can make you sick, so always wash your hands before eating and after playing.' \n\n \n\n 2. Eat Healthy Foods: 'Fruits and veggies give you energy! Try not to eat too many sweets.' \n\n \n\n 3. Get Enough Sleep: 'Sleep helps you feel rested and ready to play.' \n\n \n\n 4. Stay Clean: 'Baths help wash away dirt and keep you healthy.'"
-          src="/audio/storytime-main.mp3"
-          ;
-        />
+
+        <AudioElement source="/audio/storytime-main.mp3" id="storytime" />
+
+        <div
+          class="bg-gray-200 flex flex-col gap-2 p-4 rounded-br-3xl rounded-bl-xl m-4"
+        >
+          <span>Hello, my name is Eli the Elephant.</span>
+          <span>Let's learn a story about health and hygiene!</span>
+          <span
+            >One sunny day in the jungle, my friend Zara the Zebra looked very
+            tired. 'Eli, I feel so weak!' she said.</span
+          >
+          <span>'Zara, have you been taking care of yourself?' I asked.</span>
+          <span>'I'm not sure,' she replied.</span>
+          <span>I smiled and shared my simple health tips:</span>
+          <span
+            >1. Wash Your Hands: 'Germs can make you sick, so always wash your
+            hands before eating and after playing.'</span
+          >
+          <span
+            >2. Eat Healthy Foods: 'Fruits and veggies give you energy! Try not
+            to eat too many sweets.'</span
+          >
+          <span
+            >3. Get Enough Sleep: 'Sleep helps you feel rested and ready to
+            play.'</span
+          >
+          <span
+            >4. Stay Clean: 'Baths help wash away dirt and keep you healthy.'</span
+          >
+        </div>
       </div>
       <div class="flex flex-col gap-2">
         <span class="text-4xl pt-4 font-semibold text-primary ml-2"
@@ -219,17 +281,41 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           >Focus on key topics with interactive lessons that match your pace and
           needs.</span
         >
-        <ChatBubble
-          message=`Hello! It's important to take care of your health and hygiene so you can stay strong, active, and happy. \n\n 
-          First, always wash your hands with soap, especially before eating and after playing, to get rid of germs that can make you sick. \n\n 
-          Eating healthy foods like fruits, vegetables, and whole grains gives your body the energy it needs to grow and stay strong. \n\n 
-          Brushing your teeth twice a day helps protect them from cavities and keeps your smile bright. \n\n 
-          Make sure you get enough sleep every night, as it helps your body rest and recover. \n\n 
-          Finally, taking regular baths or showers helps keep your skin clean and fresh. \n\n 
-          By following these simple habits, you'll stay healthy and ready for fun adventures every day!`
-          src="/audio/learningtime-main.mp3"
-          ;
-        />
+
+        <AudioElement source="/audio/learningtime-main.mp3" id="learningtime" />
+
+        <div
+          class="bg-gray-200 flex flex-col gap-2 p-4 rounded-br-3xl rounded-bl-xl m-4"
+        >
+          <span
+            >Hello! It's important to take care of your health and hygiene so
+            you can stay strong, active, and happy.</span
+          >
+          <span
+            >First, always wash your hands with soap, especially before eating
+            and after playing, to get rid of germs that can make you sick.</span
+          >
+          <span
+            >Eating healthy foods like fruits, vegetables, and whole grains
+            gives your body the energy it needs to grow and stay strong.</span
+          >
+          <span
+            >Brushing your teeth twice a day helps protect them from cavities
+            and keeps your smile bright.</span
+          >
+          <span
+            >Make sure you get enough sleep every night, as it helps your body
+            rest and recover.</span
+          >
+          <span
+            >Finally, taking regular baths or showers helps keep your skin clean
+            and fresh.</span
+          >
+          <span
+            >By following these simple habits, you'll stay healthy and ready for
+            fun adventures every day!</span
+          >
+        </div>
       </div>
       <div class="flex flex-col gap-2">
         <span class="text-4xl pt-4 font-semibold text-primary ml-2"
@@ -239,12 +325,23 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           >Challenge your mind with quizzes that encourage problem-solving and
           real-world application.</span
         >
-        <ChatBubble
-          message=`
-              here's a question for you! \n\n If you see your friend about to cheat on a test, what would you do? \n\n Would you help them, \n\n tell the teacher, \n\n ignore it, \n\n or suggest they study instead? \n\n What do you think is the best choice?`
-          src="/audio/thinkingtime-main.mp3"
-          ;
-        />
+
+        <AudioElement source="/audio/thinkingtime-main.mp3" id="thinkingtime" />
+
+        <div
+          class="bg-gray-200 flex flex-col gap-2 p-4 rounded-br-3xl rounded-bl-xl m-4"
+        >
+          <span>Here's a question for you!</span>
+          <span
+            >If you see your friend about to cheat on a test, what would you do?</span
+          >
+          <span>Would you help them,</span>
+          <span>tell the teacher,</span>
+          <span>ignore it,</span>
+          <span>or suggest they study instead?</span>
+          <span>What do you think is the best choice?</span>
+        </div>
+
         <div class="relative hidden md:block">
           <button
             id="audioIcon"
@@ -263,19 +360,23 @@ import { YouTube } from "@astro-community/astro-embed-youtube";
           >Interact freely with AI, reinforcing what you've learned through
           playful, engaging conversations.</span
         >
-        <ChatBubble
-          message=`
-          Hello Aarav, it's Eli the Elephant! It's fun time, and I have a joke for you: \n\n
 
-          Why don't elephants use computers? \n\n
+        <AudioElement source="/audio/funtime-main.mp3" id="funtime" />
 
-          Because they're afraid of the mouse! \n\n
-
-          I hope that made you smile! Keep having fun and remember to stay healthy and happy!
-          `
-          src="/audio/funtime-main.mp3"
-          ;
-        />
+        <div
+          class="bg-gray-200 flex flex-col gap-2 p-4 rounded-br-3xl rounded-bl-xl m-4"
+        >
+          <span
+            >Hello Aarav, it's Eli the Elephant! It's fun time, and I have a
+            joke for you:</span
+          >
+          <span>Why don't elephants use computers?</span>
+          <span>Because they're afraid of the mouse!</span>
+          <span
+            >I hope that made you smile! Keep having fun and remember to stay
+            healthy and happy!</span
+          >
+        </div>
       </div>
     </div>
 
